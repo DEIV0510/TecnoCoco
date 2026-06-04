@@ -1,0 +1,72 @@
+================================================================
+COMO CAMBIAR LAS IMÁGENES DE LOS PRODUCTOS · TecnoCoco
+================================================================
+
+PASOS PARA CAMBIAR UNA IMAGEN:
+------------------------------
+  1. Toma la foto del producto (con buena luz, fondo limpio).
+  2. Recórtala cuadrada (700 x 700 px recomendado).
+  3. Guárdala como .jpg con calidad alta.
+  4. Renómbrala con el nombre EXACTO de la lista abajo.
+  5. Cópiala dentro de esta carpeta (img/) reemplazando la actual.
+  6. Refresca la página en el navegador. ¡Listo!
+
+================================================================
+LISTA DE PRODUCTOS Y SU ARCHIVO DE IMAGEN
+================================================================
+
+🎧 AUDÍFONOS Y AIRPODS
+----------------------
+  p_airpods.jpg     →  AirPods Serie 4              ($90.000)
+  p_bluetooth.jpg   →  Galaxy Buds2 Pro             ($90.000)
+  p_overear.jpg     →  Headphones Over-Ear Bass+    ($179.900)
+  p_sport.jpg       →  AirPods Serie 4 + Cargador   ($135.000)
+
+🔌 CARGADORES Y CABLES
+----------------------
+  p_cargador20w.jpg →  Adaptador Tipo C Apple 20W   ($50.000)
+  p_cable.jpg       →  Cable Lightning Apple 1m     ($45.000)
+  p_powerbank.jpg   →  Powerbank Solar 10.000 mAh   ($129.900)
+  p_cargadorqi.jpg  →  Cargador Qi 15W              ($69.900)
+
+⚡ GADGETS Y ACCESORIOS
+------------------------
+  p_smartwatch.jpg  →  Mini Aro de Luz Recargable          ($39.900)
+  p_smartband.jpg   →  Aro de Luz 33 cm                    ($89.900)
+  p_aroluz.jpg      →  Bombillo Parlante Bluetooth LED RGB ($49.900)
+  p_soporte.jpg     →  Soporte Holder Base Impermeable Moto($45.900)
+
+================================================================
+IMÁGENES DECORATIVAS (no son productos)
+================================================================
+
+  cat_audifonos.jpg     →  Banner de categoría Audífonos
+  cat_cargadores.jpg    →  Banner de categoría Cargadores
+  cat_smartwatches.jpg  →  Banner de categoría Gadgets
+  banner.jpg            →  Banner promocional de cargadores
+
+================================================================
+RECOMENDACIONES PARA LAS FOTOS
+================================================================
+
+  • Tamaño productos:   700 x 700 px (cuadrado)
+  • Tamaño banners:     900 x 675 px (horizontal)
+  • Formato:            .jpg (calidad 85-90%)
+  • Fondo:              Blanco o neutro de preferencia
+  • Iluminación:        Natural o con softbox, sin sombras duras
+  • Encuadre:           Producto centrado, con margen alrededor
+
+================================================================
+TIPS RÁPIDOS
+================================================================
+
+  ✓ Si NO renombras el archivo igual, la página no la encontrará.
+  ✓ El nombre debe ser EXACTAMENTE igual (minúsculas, con _).
+  ✓ Borra la imagen vieja antes de pegar la nueva (o pega y
+    Windows preguntará si reemplazar — di que sí).
+  ✓ Después de cambiar la imagen, presiona Ctrl + F5 en el
+    navegador para forzar la recarga sin caché.
+
+================================================================
+                         TecnoCoco © 2026
+================================================================

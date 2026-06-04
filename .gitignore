@@ -1,0 +1,15 @@
+# Copia de seguridad local (no se sube al repo)
+index-original-backup.html
+
+# Servidor de previsualización temporal
+__serve.cjs
+
+# Archivos del sistema
+desktop.ini
+Thumbs.db
+ehthumbs.db
+.DS_Store
+
+# Editores
+.vscode/
+.idea/
