@@ -991,9 +991,112 @@
   #pm-addcart.added{background:#22c55e;border-color:#22c55e;color:#fff}
   /* En dispositivos táctiles mostrar siempre las acciones (favorito) de la tarjeta */
   @media (hover:none){ .product-actions{opacity:1!important;transform:none!important} }
+
+  /* ============================================================
+     PRELOADER · Pantalla de carga premium (anillo + ondas + brillo)
+     ============================================================ */
+  #preloader{
+    position:fixed; inset:0; z-index:99999;
+    background:radial-gradient(circle at 50% 42%, #17171b 0%, #0b0b0c 62%);
+    display:grid; place-items:center; overflow:hidden;
+    transition:opacity .7s ease, visibility .7s ease;
+  }
+  #preloader.done{opacity:0; visibility:hidden; pointer-events:none}
+  #preloader::before{content:""; position:absolute; width:680px; height:680px; border-radius:50%;
+    background:radial-gradient(circle, rgba(201,162,75,.16), transparent 65%);
+    top:-180px; right:-150px; animation:plFloat 9s ease-in-out infinite}
+  #preloader::after{content:""; position:absolute; width:520px; height:520px; border-radius:50%;
+    background:radial-gradient(circle, rgba(201,162,75,.10), transparent 70%);
+    bottom:-160px; left:-120px; animation:plFloat 11s ease-in-out infinite reverse}
+  @keyframes plFloat{0%,100%{transform:translate(0,0)}50%{transform:translate(26px,-22px)}}
+
+  .pl-wrap{position:relative; z-index:2; display:flex; flex-direction:column; align-items:center; gap:30px; padding:24px;
+    animation:plIn .8s cubic-bezier(.2,.7,.2,1) both}
+  @keyframes plIn{from{opacity:0; transform:translateY(14px) scale(.96)}to{opacity:1; transform:none}}
+
+  .pl-stage{position:relative; width:172px; height:172px; display:grid; place-items:center}
+  /* ondas de sonido (guiño a los audífonos) */
+  .pl-stage .wave{position:absolute; inset:20px; border-radius:50%; border:1.5px solid rgba(201,162,75,.55);
+    animation:plWave 2.4s ease-out infinite}
+  .pl-stage .wave:nth-child(2){animation-delay:.8s}
+  .pl-stage .wave:nth-child(3){animation-delay:1.6s}
+  @keyframes plWave{0%{transform:scale(.62); opacity:.75}100%{transform:scale(1.65); opacity:0}}
+  /* anillo de progreso dorado (conic-gradient -> dona con máscara) */
+  .pl-ring{position:absolute; inset:0; border-radius:50%;
+    background:conic-gradient(from -90deg, var(--gold) calc(var(--p,0)*1%), rgba(201,162,75,.14) 0);
+    -webkit-mask:radial-gradient(closest-side, transparent 72%, #000 74%);
+    mask:radial-gradient(closest-side, transparent 72%, #000 74%);
+    filter:drop-shadow(0 0 10px rgba(201,162,75,.45)); transition:background .25s linear}
+  /* logo */
+  .pl-logo{position:relative; width:110px; height:110px; border-radius:26px;
+    background:linear-gradient(145deg,#0b0b0c,#1f1f22); border:1px solid rgba(201,162,75,.4);
+    display:grid; place-items:center; box-shadow:0 18px 50px rgba(0,0,0,.55), inset 0 0 0 1px rgba(201,162,75,.1);
+    animation:plBob 3.6s ease-in-out infinite}
+  @keyframes plBob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+  .pl-logo img,.pl-logo svg{width:74%; height:74%; object-fit:contain; filter:drop-shadow(0 4px 16px rgba(201,162,75,.5))}
+
+  .pl-text{text-align:center}
+  .pl-name{font-size:30px; font-weight:900; letter-spacing:.02em; line-height:1;
+    background:linear-gradient(100deg,#c9a24b 18%,#f7eccf 50%,#c9a24b 82%); background-size:220% auto;
+    -webkit-background-clip:text; background-clip:text; color:transparent; -webkit-text-fill-color:transparent;
+    animation:plShine 2.6s linear infinite}
+  @keyframes plShine{to{background-position:220% center}}
+  .pl-tag{margin-top:11px; font-size:10.5px; letter-spacing:.34em; text-transform:uppercase; color:#9c9890}
+  .pl-pct{font-size:13px; font-weight:800; color:var(--gold); letter-spacing:.12em; font-variant-numeric:tabular-nums}
+
+  @media (prefers-reduced-motion: reduce){
+    #preloader::before,#preloader::after,#preloader .wave,#preloader .pl-logo,#preloader .pl-name,#preloader .pl-wrap{animation:none}
+  }
+  @media(max-width:480px){
+    .pl-stage{width:150px; height:150px}
+    .pl-logo{width:96px; height:96px; border-radius:22px}
+    .pl-name{font-size:26px}
+  }
 </style>
 </head>
 <body>
+
+<!-- ============ PRELOADER · Pantalla de carga ============ -->
+<div id="preloader" role="status" aria-live="polite" aria-label="Cargando TecnoCoco">
+  <div class="pl-wrap">
+    <div class="pl-stage">
+      <span class="wave"></span><span class="wave"></span><span class="wave"></span>
+      <div class="pl-ring"></div>
+      <div class="pl-logo">
+        <img src="logo/marca.png" alt="" onerror="this.outerHTML='&lt;svg viewBox=\'0 0 64 64\'&gt;&lt;use href=\'#logo-tecnococo\'/&gt;&lt;/svg&gt;'">
+      </div>
+    </div>
+    <div class="pl-text">
+      <div class="pl-name">TecnoCoco</div>
+      <div class="pl-tag">Tecnología premium · Colombia</div>
+    </div>
+    <div class="pl-pct" id="plPct">0%</div>
+  </div>
+</div>
+<script>
+(function(){
+  var pre=document.getElementById('preloader'); if(!pre) return;
+  var ring=pre.querySelector('.pl-ring'), pct=document.getElementById('plPct');
+  var reduce=false; try{reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;}catch(e){}
+  var p=0, done=false;
+  function set(v){ p=v; if(ring) ring.style.setProperty('--p', v); if(pct) pct.textContent=Math.round(v)+'%'; }
+  function hide(){
+    if(done) return; done=true; set(100);
+    setTimeout(function(){
+      pre.classList.add('done');
+      try{ document.body.style.overflow=''; }catch(e){}
+      setTimeout(function(){ if(pre&&pre.parentNode) pre.parentNode.removeChild(pre); }, 800);
+    }, reduce?0:320);
+  }
+  try{ document.body.style.overflow='hidden'; }catch(e){}
+  if(reduce){ hide(); return; }
+  var timer=setInterval(function(){ if(p<90){ set(p+Math.max(0.6,(90-p)*0.05)); } }, 95);
+  function complete(){ clearInterval(timer); var c=p; var t2=setInterval(function(){ c+=3.5; if(c>=100){ c=100; clearInterval(t2); hide(); } set(c); }, 16); }
+  if(document.readyState==='complete'){ setTimeout(complete,350); }
+  else { window.addEventListener('load', function(){ setTimeout(complete,350); }); }
+  setTimeout(function(){ if(!done){ clearInterval(timer); complete(); } }, 4200); /* seguridad: nunca se queda pegado */
+})();
+</script>
 
 <!-- ============ SVG LOGO DEFS ============ -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
