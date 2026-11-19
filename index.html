@@ -1425,6 +1425,75 @@
   .js .float-wa{transform:scale(0)}
   .hero-done .float-wa{transform:none;transition:transform .7s var(--ease)}
   .hero-done .float-wa:hover{transform:scale(1.08)}
+
+  /* ============================================================
+     VENTAS 2026-11 · confianza a la vista, carrito que empuja
+     (solo datos reales: contra entrega, envío gratis, garantía)
+     ============================================================ */
+  /* Héroe: confianza justo debajo de los botones */
+  .hero-trust{list-style:none;display:flex;flex-wrap:wrap;gap:10px 22px;margin:22px 0 0;padding:0;color:#d8d3c6;font-size:13.5px;font-weight:500}
+  .hero-trust li{display:flex;align-items:center;gap:8px}
+  .hero-trust .i{width:18px;height:18px;color:var(--gold)}
+  .js .hero-trust{opacity:0;transform:translateY(20px);transition:opacity 1s var(--ease) .82s,transform 1s var(--ease) .82s}
+  .hero-in .hero-trust{opacity:1;transform:none}
+  @media(max-width:480px){.hero-trust{gap:8px 16px;font-size:12.5px}.hero-trust .i{width:16px;height:16px}}
+
+  /* Tarjetas: beneficio real en vez de «En stock» */
+  .stock{color:#15803d;font-weight:600;gap:6px}
+  .stock .i{width:14px;height:14px;color:#15803d}
+
+  /* Detalle: botón de carrito con texto */
+  .pdetail-cta{display:flex;flex-wrap:wrap;gap:10px}
+  .pdetail-buy{flex:1 1 170px;min-width:0;padding:14px 14px;font-size:14px;white-space:nowrap}
+  @media(min-width:481px){.pdetail-cta{display:grid;grid-template-columns:1fr 1fr 54px}}
+  .pdetail-add{white-space:nowrap}
+  .pdetail-cta .pdetail-fav{flex:0 0 54px}
+  .pdetail-add{flex:1 1 170px;min-width:0;display:flex;align-items:center;justify-content:center;gap:8px;min-height:54px;padding:0 14px;background:var(--black);color:var(--gold);border:1px solid var(--black);font-family:inherit;font-weight:700;font-size:14px;cursor:pointer;transition:background .3s,color .3s,border-color .3s}
+  @media(max-width:480px){.pdetail-buy,.pdetail-add{flex:1 1 100%}.pdetail-cta .pdetail-fav{display:none}}
+  .pdetail-add svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2}
+  .pdetail-add:hover{background:var(--gold);color:var(--black);border-color:var(--gold)}
+  #pm-addcart.added{background:#15803d;border-color:#15803d;color:#fff}
+
+  /* Aviso con acción «Ver carrito» */
+  .toast-act{margin-left:6px;background:var(--gold);color:var(--black);border:0;font-family:inherit;font-weight:800;font-size:13px;padding:8px 12px;cursor:pointer;white-space:nowrap}
+  .toast-act:hover{background:var(--gold-bright)}
+
+  /* Carrito: sugeridos */
+  .cart-upsell{margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
+  .cu-title{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+  .cu-item{display:flex;align-items:center;gap:12px;padding:10px;background:var(--white);border:1px solid var(--line);margin-bottom:8px}
+  .cu-item img{width:52px;height:52px;object-fit:contain;flex-shrink:0;background:#fff}
+  .cu-info{flex:1;min-width:0}
+  .cu-name{font-size:13px;font-weight:700;line-height:1.3;color:var(--black)}
+  .cu-price{font-size:13px;font-weight:800;color:var(--black);margin-top:2px}
+  .cu-add{background:transparent;border:1px solid var(--black);color:var(--black);font-family:inherit;font-weight:700;font-size:12px;padding:9px 12px;cursor:pointer;transition:background .25s,color .25s}
+  .cu-add:hover{background:var(--black);color:var(--gold)}
+
+  /* Barra fija de pedido: solo celular y solo con productos en el carrito */
+  .buybar{display:none}
+  @media(max-width:760px){
+    .buybar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:flex;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:var(--black);border-top:1px solid rgba(201,162,75,.35);transform:translateY(110%);transition:transform .5s var(--ease)}
+    html.has-cart:not(.ov-open) .buybar{transform:none}
+    .bb-info{flex:1;min-width:0;display:flex;align-items:center;gap:8px;background:transparent;border:1px solid var(--line-dark);color:#fff;font-family:inherit;font-size:13px;padding:0 12px;height:46px;cursor:pointer}
+    .bb-info .i{width:18px;height:18px;color:var(--gold)}
+    .bb-info span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .bb-info b{margin-left:auto;color:var(--gold);font-size:15px;font-variant-numeric:tabular-nums}
+    .bb-go{display:flex;align-items:center;gap:8px;background:var(--whats);color:#fff;border:0;font-family:inherit;font-weight:800;font-size:15px;padding:0 18px;height:46px;cursor:pointer}
+    .bb-go svg{width:18px;height:18px}
+    html.has-cart body{padding-bottom:68px}
+    html.has-cart .float-wa{bottom:80px}
+    html.has-cart .toast-wrap{bottom:144px}
+    html.has-cart .wa-tip{display:none}
+  }
+
+  /* Burbuja de ayuda junto al botón de WhatsApp */
+  .wa-tip{position:fixed;right:22px;bottom:96px;z-index:61;display:flex;align-items:center;gap:4px;background:var(--white);color:var(--black);border:1px solid var(--line);box-shadow:0 14px 34px rgba(11,11,12,.18);padding:10px 8px 10px 14px;font-size:14px;opacity:0;transform:translateY(10px);transition:opacity .4s var(--ease),transform .5s var(--ease)}
+  .wa-tip.show{opacity:1;transform:none}
+  .wa-tip a{color:var(--black)}
+  .wa-tip a b{color:#15803d}
+  .wa-tip::after{content:"";position:absolute;right:26px;bottom:-7px;width:12px;height:12px;background:var(--white);border-right:1px solid var(--line);border-bottom:1px solid var(--line);transform:rotate(45deg)}
+  .wa-tip-x{background:transparent;border:0;color:var(--muted);cursor:pointer;font-size:13px;width:28px;height:28px}
+  @media(max-width:480px){.wa-tip{right:16px;bottom:82px;font-size:13px}}
 </style>
 </head>
 <body>
@@ -1552,7 +1621,7 @@
       </span>
     </a>
     <nav class="nav-links">
-      <a href="#nuevos">Nuevos</a>
+      <a href="#nuevos">Regalos</a>
       <a href="#categorias">Categorías</a>
       <a href="#audifonos">Audífonos</a>
       <a href="#cargadores">Cargadores</a>
@@ -1585,7 +1654,7 @@
   <a href="javascript:void(0)" onclick="closeMenu();openSearch()">Buscar productos</a>
   <a href="javascript:void(0)" onclick="closeMenu();openFavorites()">Mis favoritos</a>
   <a href="javascript:void(0)" onclick="closeMenu();openCart()">Ver carrito</a>
-  <a href="#nuevos" onclick="closeMenu()">Recién llegados</a>
+  <a href="#nuevos" onclick="closeMenu()">Ideas para regalar</a>
   <a href="#categorias" onclick="closeMenu()">Categorías</a>
   <a href="#audifonos" onclick="closeMenu()">Audífonos</a>
   <a href="#cargadores" onclick="closeMenu()">Cargadores</a>
@@ -1604,14 +1673,19 @@
     <div>
       <span class="eyebrow"><span class="dot"></span>Tecnología premium · Colombia</span>
       <h1>Gadgets que <span class="gold serif">elevan</span><br>tu día a día.</h1>
-      <p>Audífonos, cargadores, aros de luz y accesorios de tecnología premium. Envíos a toda Colombia con garantía y pago contra entrega.</p>
+      <p>Audífonos, smartwatch, cargadores y gadgets para regalar o para ti. Envío gratis a toda Colombia y pagas cuando lo recibes.</p>
       <div class="hero-ctas">
-        <a href="#audifonos" class="btn btn-primary magnetic">Ver productos <span class="arr" aria-hidden="true">→</span></a>
+        <a href="#nuevos" class="btn btn-primary magnetic">Comprar ahora <span class="arr" aria-hidden="true">→</span></a>
         <a href="https://wa.me/573105490250?text=Hola%20TecnoCoco%2C%20quiero%20m%C3%A1s%20info" target="_blank" rel="noopener" class="btn btn-ghost magnetic">
           <svg width="18" height="18"><use href="#wa"/></svg>
           Hablar por WhatsApp
         </a>
       </div>
+      <ul class="hero-trust">
+        <li><svg class="i" aria-hidden="true"><use href="#ic-cash"/></svg>Pagas al recibir</li>
+        <li><svg class="i" aria-hidden="true"><use href="#ic-truck"/></svg>Envío gratis</li>
+        <li><svg class="i" aria-hidden="true"><use href="#ic-shield"/></svg>Garantía 1 mes</li>
+      </ul>
     </div>
     <div class="hero-art">
       <div class="bento">
@@ -1714,8 +1788,8 @@
   <div class="container">
     <div class="section-head reveal">
       <div>
-        <h2>Recién <em>llegados</em></h2>
-        <p>Smartwatch con llamadas y cámaras de seguridad WiFi. Para regalar o para cuidar tu casa.</p>
+        <h2>Ideas para <em>regalar</em></h2>
+        <p>Smartwatch, audífonos y cámaras WiFi. Llegan en 1 a 5 días hábiles y pagas cuando lo recibes.</p>
       </div>
     </div>
     <div class="product-grid grid-3">
@@ -1730,7 +1804,7 @@
           <h3 class="product-name">Combo 2 cámaras WiFi 360°</h3>
           <p class="product-desc">Giro de 360°, visión nocturna y a color, IP66. Las ves en vivo desde el celular.</p>
           <div class="price-row"><span class="price">$229.900</span></div>
-          <span class="stock"><span class="dot"></span> En stock</span>
+          <span class="stock"><svg class="i" aria-hidden="true"><use href="#ic-check"/></svg> Envío gratis · Pagas al recibir</span>
           <a class="buy" target="_blank" href="https://wa.me/573105490250?text=Hola%20TecnoCoco%2C%20me%20interesa%20el%20Combo%202%20c%C3%A1maras%20WiFi%20360%C2%B0%20%28%24229.900%29">
             <svg><use href="#wa"/></svg> Comprar por WhatsApp
           </a>
@@ -1747,7 +1821,7 @@
           <h3 class="product-name">Smartwatch W200 + audífonos F140</h3>
           <p class="product-desc">Reloj con 2 correas y audífonos Bluetooth con estuche de carga.</p>
           <div class="price-row"><span class="price">$139.900</span></div>
-          <span class="stock"><span class="dot"></span> En stock</span>
+          <span class="stock"><svg class="i" aria-hidden="true"><use href="#ic-check"/></svg> Envío gratis · Pagas al recibir</span>
           <a class="buy" target="_blank" href="https://wa.me/573105490250?text=Hola%20TecnoCoco%2C%20me%20interesa%20el%20Smartwatch%20W200%20%2B%20aud%C3%ADfonos%20F140%20%28%24139.900%29">
             <svg><use href="#wa"/></svg> Comprar por WhatsApp
           </a>
@@ -1764,7 +1838,7 @@
           <h3 class="product-name">Smartwatch KR Ultra 3 · 49 mm</h3>
           <p class="product-desc">Pantalla de 2,1", llamadas por Bluetooth y resistencia IPX7. 6 colores.</p>
           <div class="price-row"><span class="price">$119.900</span></div>
-          <span class="stock"><span class="dot"></span> En stock</span>
+          <span class="stock"><svg class="i" aria-hidden="true"><use href="#ic-check"/></svg> Envío gratis · Pagas al recibir</span>
           <a class="buy" target="_blank" href="https://wa.me/573105490250?text=Hola%20TecnoCoco%2C%20me%20interesa%20el%20Smartwatch%20KR%20Ultra%203%20de%2049%20mm%20%28%24119.900%29">
             <svg><use href="#wa"/></svg> Comprar por WhatsApp
           </a>
@@ -1798,7 +1872,7 @@
           <div class="product-rating"><span class="stars">★★★★★</span> 4.9 (218)</div>
           <p class="product-desc">Audio espacial, llamadas claras y conexión rápida.</p>
           <div class="price-row"><span class="price">$90.000</span></div>
-          <span class="stock"><span class="dot"></span> En stock</span>
+          <span class="stock"><svg class="i" aria-hidden="true"><use href="#ic-check"/></svg> Envío gratis · Pagas al recibir</span>
           <a class="buy" target="_blank" href="https://wa.me/573105490250?text=Hola%20TecnoCoco%2C%20me%20interesan%20los%20AirPods%20Serie%204%20%28%2490.000%29">
             <svg><use href="#wa"/></svg> Comprar por WhatsApp
           </a>
@@ -1816,7 +1890,7 @@
           <div class="product-rating"><span class="stars">★★★★★</span> 4.8 (142)</div>
           <p class="product-desc">Cancelación inteligente de ruido y sonido Hi-Fi 24-bit.</p>
           <div class="price-row"><span class="price">$90.000</span></div>
-          <span class="stock"><span class="dot"></span> En stock</span>
+          <span class="stock"><svg class="i" aria-hidden="true"><use href="#ic-check"/></svg> Envío gratis · Pagas al recibir</span>
           <a class="buy" target="_blank" href="https://wa.me/573105490250?text=Hola%20TecnoCoco%2C%20me%20interesan%20los%20Galaxy%20Buds2%20Pro%20%28%2490.000%29">
             <svg><use href="#wa"/></svg> Comprar por WhatsApp
           </a>
@@ -1833,7 +1907,7 @@
           <h3 class="product-name">Audífonos Havit H619BT</h3>
           <p class="product-desc">Over-ear plegable, Bluetooth 5.4, hasta 20 h de batería y cable de 3,5 mm.</p>
           <div class="price-row"><span class="price">$89.900</span></div>
-          <span class="stock"><span class="dot"></span> En stock</span>
+          <span class="stock"><svg class="i" aria-hidden="true"><use href="#ic-check"/></svg> Envío gratis · Pagas al recibir</span>
           <a class="buy" target="_blank" href="https://wa.me/573105490250?text=Hola%20TecnoCoco%2C%20me%20interesan%20los%20Aud%C3%ADfonos%20Havit%20H619BT%20%28%2489.900%29">
             <svg><use href="#wa"/></svg> Comprar por WhatsApp
           </a>
@@ -1852,7 +1926,7 @@
           <div class="product-rating"><span class="stars">★★★★★</span> 4.9 (104)</div>
           <p class="product-desc">El combo perfecto: audífonos premium + carga rápida.</p>
           <div class="price-row"><span class="price">$135.000</span><span class="price-old">$140.000</span></div>
-          <span class="stock"><span class="dot"></span> En stock</span>
+          <span class="stock"><svg class="i" aria-hidden="true"><use href="#ic-check"/></svg> Envío gratis · Pagas al recibir</span>
           <a class="buy" target="_blank" href="https://wa.me/573105490250?text=Hola%20TecnoCoco%2C%20me%20interesa%20el%20Combo%20AirPods%20Serie%204%20%2B%20Cargador%2020W%20%28%24135.000%29">
             <svg><use href="#wa"/></svg> Comprar por WhatsApp
           </a>
@@ -1906,7 +1980,7 @@
           <div class="product-rating"><span class="stars">★★★★★</span> 4.7 (189)</div>
           <p class="product-desc">Panel solar integrado para recargar al aire libre. Linterna LED de emergencia incluida.</p>
           <div class="price-row"><span class="price">$129.900</span></div>
-          <span class="stock"><span class="dot"></span> En stock</span>
+          <span class="stock"><svg class="i" aria-hidden="true"><use href="#ic-check"/></svg> Envío gratis · Pagas al recibir</span>
           <a class="buy" target="_blank" href="https://wa.me/573105490250?text=Hola%20TecnoCoco%2C%20me%20interesa%20el%20Powerbank%20Solar%2010.000%20mAh%20%28%24129.900%29">
             <svg><use href="#wa"/></svg> Comprar por WhatsApp
           </a>
@@ -1923,7 +1997,7 @@
           <h3 class="product-name">Power bank magnético Yookie YO111</h3>
           <p class="product-desc">10.000 mAh, carga magnética, 22,5 W por cable y pantalla de batería.</p>
           <div class="price-row"><span class="price">$119.900</span></div>
-          <span class="stock"><span class="dot"></span> En stock</span>
+          <span class="stock"><svg class="i" aria-hidden="true"><use href="#ic-check"/></svg> Envío gratis · Pagas al recibir</span>
           <a class="buy" target="_blank" href="https://wa.me/573105490250?text=Hola%20TecnoCoco%2C%20me%20interesa%20el%20Power%20bank%20magn%C3%A9tico%20Yookie%20YO111%20%28%24119.900%29">
             <svg><use href="#wa"/></svg> Comprar por WhatsApp
           </a>
@@ -1939,7 +2013,7 @@
           <h3 class="product-name">Cargador inalámbrico 3 en 1</h3>
           <p class="product-desc">Celular, reloj y audífonos a la vez. Plegable y compacto.</p>
           <div class="price-row"><span class="price">$74.900</span></div>
-          <span class="stock"><span class="dot"></span> En stock</span>
+          <span class="stock"><svg class="i" aria-hidden="true"><use href="#ic-check"/></svg> Envío gratis · Pagas al recibir</span>
           <a class="buy" target="_blank" href="https://wa.me/573105490250?text=Hola%20TecnoCoco%2C%20me%20interesa%20el%20Cargador%20inal%C3%A1mbrico%203%20en%201%20%28%2474.900%29">
             <svg><use href="#wa"/></svg> Comprar por WhatsApp
           </a>
@@ -1975,7 +2049,7 @@
           <div class="product-rating"><span class="stars">★★★★★</span> 4.9 (312)</div>
           <p class="product-desc">Aro de luz grande de 33 cm con 3 tonos y 10 niveles. Iluminación profesional.</p>
           <div class="price-row"><span class="price">$89.900</span></div>
-          <span class="stock"><span class="dot"></span> En stock</span>
+          <span class="stock"><svg class="i" aria-hidden="true"><use href="#ic-check"/></svg> Envío gratis · Pagas al recibir</span>
           <a class="buy" target="_blank" href="https://wa.me/573105490250?text=Hola%20TecnoCoco%2C%20me%20interesa%20el%20Aro%20de%20Luz%2033%20cm%20%28%2489.900%29">
             <svg><use href="#wa"/></svg> Comprar por WhatsApp
           </a>
@@ -1992,7 +2066,7 @@
           <h3 class="product-name">Micrófono doble de solapa F4</h3>
           <p class="product-desc">Dos micrófonos de clip con receptor para iPhone. Para videos y entrevistas.</p>
           <div class="price-row"><span class="price">$79.900</span></div>
-          <span class="stock"><span class="dot"></span> En stock</span>
+          <span class="stock"><svg class="i" aria-hidden="true"><use href="#ic-check"/></svg> Envío gratis · Pagas al recibir</span>
           <a class="buy" target="_blank" href="https://wa.me/573105490250?text=Hola%20TecnoCoco%2C%20me%20interesa%20el%20Micr%C3%B3fono%20doble%20de%20solapa%20F4%20%28%2479.900%29">
             <svg><use href="#wa"/></svg> Comprar por WhatsApp
           </a>
@@ -2008,7 +2082,7 @@
           <h3 class="product-name">Cámara WiFi tipo bombillo 1080p</h3>
           <p class="product-desc">Se enrosca como un bombillo. 1080p, visión nocturna y alerta de movimiento.</p>
           <div class="price-row"><span class="price">$99.900</span></div>
-          <span class="stock"><span class="dot"></span> En stock</span>
+          <span class="stock"><svg class="i" aria-hidden="true"><use href="#ic-check"/></svg> Envío gratis · Pagas al recibir</span>
           <a class="buy" target="_blank" href="https://wa.me/573105490250?text=Hola%20TecnoCoco%2C%20me%20interesa%20la%20C%C3%A1mara%20WiFi%20tipo%20bombillo%201080p%20%28%2499.900%29">
             <svg><use href="#wa"/></svg> Comprar por WhatsApp
           </a>
@@ -2193,7 +2267,7 @@
       <p>Todos nuestros productos en un solo lugar. Haz click en cualquiera para ver detalles.</p>
       <div class="catalog-filters">
         <button class="cat-filter active" data-filter="all" onclick="filterCatalog('all',this)">Todos</button>
-        <button class="cat-filter" data-filter="nuevos" onclick="filterCatalog('nuevos',this)">Nuevos</button>
+        <button class="cat-filter" data-filter="nuevos" onclick="filterCatalog('nuevos',this)">Regalos</button>
         <button class="cat-filter" data-filter="audifonos" onclick="filterCatalog('audifonos',this)">Audífonos</button>
         <button class="cat-filter" data-filter="cargadores" onclick="filterCatalog('cargadores',this)">Cargadores</button>
         <button class="cat-filter" data-filter="gadgets" onclick="filterCatalog('gadgets',this)">Gadgets</button>
@@ -2219,13 +2293,13 @@
           <span class="pp-save" id="pm-save" style="display:none"></span>
         </div>
         <p class="pdetail-desc" id="pm-desc"></p>
-        <span class="pdetail-stock"><span class="dot"></span> En stock · Envío inmediato</span>
+        <span class="pdetail-stock"><span class="dot"></span> En stock · Despacho en 24 h · Pagas al recibir</span>
         <div class="pdetail-cta">
-          <a class="pdetail-buy" id="pm-buy" target="_blank">
-            <svg><use href="#wa"/></svg> Comprar por WhatsApp
+          <a class="pdetail-buy" id="pm-buy" target="_blank" rel="noopener">
+            <svg><use href="#wa"/></svg> Pedir por WhatsApp
           </a>
-          <button class="pdetail-fav" id="pm-addcart" type="button" title="Agregar al carrito" aria-label="Agregar al carrito" onclick="addToCart(currentPid)">
-            <svg><use href="#ic-cart"/></svg>
+          <button class="pdetail-add" id="pm-addcart" type="button" onclick="addToCart(currentPid)">
+            <svg aria-hidden="true"><use href="#ic-cart"/></svg> Agregar al carrito
           </button>
           <button class="pdetail-fav" id="pm-fav" type="button" title="Agregar a favoritos" aria-label="Agregar a favoritos" aria-pressed="false" onclick="toggleFav(currentPid, this)">
             <svg><use href="#ic-heart"/></svg>
@@ -2279,6 +2353,7 @@
   <div class="cart-body" id="cartBody"></div>
   <div class="cart-foot" id="cartFoot" style="display:none">
     <div class="cart-line"><span>Envío</span><b>GRATIS</b></div>
+    <div class="cart-line"><span>Pago</span><b>Al recibir</b></div>
     <div class="cart-total"><span>Total estimado</span><b id="cartTotal">$0</b></div>
     <button class="cart-checkout" type="button" onclick="checkoutWhatsApp()">
       <svg aria-hidden="true"><use href="#wa"/></svg> Finalizar pedido por WhatsApp
@@ -2286,6 +2361,24 @@
     <div class="cart-note"><svg class="i" aria-hidden="true"><use href="#ic-lock"/></svg> Coordinas pago y envío con un asesor real</div>
   </div>
 </aside>
+
+<!-- ============ BARRA DE PEDIDO (celular, solo con carrito) ============ -->
+<div class="buybar" id="buyBar">
+  <button type="button" class="bb-info" onclick="openCart()" aria-label="Ver carrito">
+    <svg class="i" aria-hidden="true"><use href="#ic-cart"/></svg>
+    <span id="bbText">0 productos</span>
+    <b id="bbTotal">$0</b>
+  </button>
+  <button type="button" class="bb-go" onclick="checkoutWhatsApp()">
+    <svg aria-hidden="true"><use href="#wa"/></svg> Pedir
+  </button>
+</div>
+
+<!-- ============ BURBUJA DE AYUDA (WhatsApp) ============ -->
+<div class="wa-tip" id="waTip" hidden>
+  <a href="https://wa.me/573105490250?text=Hola%20TecnoCoco%2C%20%C2%BFme%20ayudan%20a%20elegir%3F" target="_blank" rel="noopener">¿Te ayudamos a elegir? <b>Escríbenos</b></a>
+  <button type="button" class="wa-tip-x" aria-label="Cerrar" onclick="hideWaTip(true)">✕</button>
+</div>
 
 <!-- ============ TOASTS (notificaciones accesibles) ============ -->
 <div class="toast-wrap" id="toastWrap" aria-live="polite" aria-atomic="false"></div>
@@ -2362,7 +2455,7 @@
     $$('pdetail').setAttribute('aria-hidden','false');
     $$('pdetail').classList.add('open');
     $$('pdetail').scrollTop = 0;
-    document.body.style.overflow='hidden';
+    refreshScrollLock();
     setTimeout(()=>{const c=$$('pdetail').querySelector('.pdetail-close'); c&&c.focus();},60);
   }
   function closeProduct(){
@@ -2409,20 +2502,20 @@
       b.classList.toggle('active', b.dataset.filter===filter);
     });
     // título dinámico
-    const titles = {all:'Catálogo <em>completo</em>', nuevos:'Recién <em>llegados</em>', audifonos:'Audífonos & <em>AirPods</em>', cargadores:'Cargadores & <em>Power banks</em>', gadgets:'Gadgets & <em>Accesorios</em>'};
+    const titles = {all:'Catálogo <em>completo</em>', nuevos:'Ideas para <em>regalar</em>', audifonos:'Audífonos & <em>AirPods</em>', cargadores:'Cargadores & <em>Power banks</em>', gadgets:'Gadgets & <em>Accesorios</em>'};
     $$('catalog-title').innerHTML = titles[filter] || titles.all;
     renderCatalog(filter);
     rememberFocus();
     $$('catalog').setAttribute('aria-hidden','false');
     $$('catalog').classList.add('open');
     $$('catalog').scrollTop = 0;
-    document.body.style.overflow='hidden';
+    refreshScrollLock();
     setTimeout(()=>{const c=$$('catalog').querySelector('.pdetail-close'); c&&c.focus();},60);
   }
   function filterCatalog(filter, btn){
     document.querySelectorAll('.cat-filter').forEach(b=>b.classList.remove('active'));
     btn.classList.add('active');
-    const titles = {all:'Catálogo <em>completo</em>', nuevos:'Recién <em>llegados</em>', audifonos:'Audífonos & <em>AirPods</em>', cargadores:'Cargadores & <em>Power banks</em>', gadgets:'Gadgets & <em>Accesorios</em>'};
+    const titles = {all:'Catálogo <em>completo</em>', nuevos:'Ideas para <em>regalar</em>', audifonos:'Audífonos & <em>AirPods</em>', cargadores:'Cargadores & <em>Power banks</em>', gadgets:'Gadgets & <em>Accesorios</em>'};
     $$('catalog-title').innerHTML = titles[filter] || titles.all;
     renderCatalog(filter);
   }
@@ -2508,6 +2601,7 @@
   function refreshScrollLock(){
     const open=document.querySelector('#pdetail.open,#catalog.open,#cartDrawer.open,#searchOverlay.open,.mobile-menu.open');
     document.body.style.overflow = open ? 'hidden' : '';
+    document.documentElement.classList.toggle('ov-open', !!open);
   }
   function rememberFocus(){ lastFocus = document.activeElement; }
   function restoreFocus(){ try{ lastFocus && lastFocus.focus({preventScroll:true}); }catch(e){} }
@@ -2535,6 +2629,11 @@
         ? '<span class="ico"><svg style="width:15px;height:15px;fill:currentColor"><use href="#ic-heart"/></svg></span>'
         : '<span class="ico"><svg style="width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2"><use href="#ic-cart"/></svg></span>';
     const t=document.createElement('div'); t.className='toast'; t.innerHTML=ico+'<span>'+msg+'</span>';
+    if(opts.action){
+      const b=document.createElement('button'); b.type='button'; b.className='toast-act'; b.textContent=opts.action.label;
+      b.addEventListener('click',()=>{ t.remove(); opts.action.fn(); });
+      t.appendChild(b);
+    }
     $$('toastWrap').appendChild(t);
     requestAnimationFrame(()=>t.classList.add('show'));
     setTimeout(()=>{ t.classList.remove('show'); setTimeout(()=>t.remove(),320); }, opts.ms||2600);
@@ -2567,14 +2666,23 @@
   function addToCart(id,qty){
     qty=qty||1; if(!id||!PRODUCTS[id]) return;
     cart[id]=(cart[id]||0)+qty; saveLS(LS_CART,cart);
-    updateCartBadge(); toast(PRODUCTS[id].name+' agregado al carrito',{icon:'check'});
+    updateCartBadge();
+    const drawerOpen=$$('cartDrawer').classList.contains('open');
+    toast(PRODUCTS[id].name+' agregado al carrito', drawerOpen ? {icon:'check'} : {icon:'check', ms:4200, action:{label:'Ver carrito', fn:openCart}});
     document.querySelectorAll('.add-cart[data-id="'+id+'"]').forEach(b=>{ b.classList.add('added'); setTimeout(()=>b.classList.remove('added'),900); });
     const a=$$('pm-addcart'); if(currentPid===id&&a){ a.classList.add('added'); setTimeout(()=>a.classList.remove('added'),900); }
     if($$('cartDrawer').classList.contains('open')) renderCart();
   }
   function setQty(id,q){ if(q<=0) delete cart[id]; else cart[id]=q; saveLS(LS_CART,cart); updateCartBadge(); renderCart(); }
   function removeFromCart(id){ delete cart[id]; saveLS(LS_CART,cart); updateCartBadge(); renderCart(); }
-  function updateCartBadge(){ const n=cartCount(),b=$$('cartCount'); b.textContent=n; b.classList.toggle('show',n>0); }
+  function updateCartBadge(){
+    const n=cartCount(),b=$$('cartCount'); b.textContent=n; b.classList.toggle('show',n>0);
+    /* Barra fija de pedido (celular) */
+    document.documentElement.classList.toggle('has-cart', n>0);
+    const t=$$('bbText'), tot=$$('bbTotal');
+    if(t) t.textContent = n+(n===1?' producto':' productos');
+    if(tot) tot.textContent = fmt(cartSubtotal());
+  }
   function renderCart(){
     const body=$$('cartBody'), foot=$$('cartFoot'), ids=Object.keys(cart);
     if(!ids.length){
@@ -2592,6 +2700,16 @@
         '<button type="button" aria-label="Agregar uno" onclick="setQty(\''+id+'\','+(q+1)+')"><svg style="width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2.4"><use href="#ic-plus"/></svg></button></div></div>'+
         '<button class="cart-item-rm" type="button" aria-label="Eliminar '+p.name+'" onclick="removeFromCart(\''+id+'\')">✕</button></div>';
     }).join('');
+    /* Sugeridos: productos relacionados con lo que ya está en el carrito */
+    const sug=[];
+    ids.forEach(id=>((PRODUCTS[id]&&PRODUCTS[id].related)||[]).forEach(r=>{ if(!cart[r] && PRODUCTS[r] && !sug.includes(r)) sug.push(r); }));
+    if(sug.length){
+      body.innerHTML += '<div class="cart-upsell"><div class="cu-title">Completa tu pedido</div>'+
+        sug.slice(0,2).map(r=>{ const p=PRODUCTS[r];
+          return '<div class="cu-item"><img src="'+p.img+'" alt="" loading="lazy"><div class="cu-info"><div class="cu-name">'+p.name+'</div><div class="cu-price">'+fmt(p.price)+'</div></div>'+
+            '<button type="button" class="cu-add" aria-label="Agregar '+p.name+' al carrito" onclick="addToCart(\''+r+'\')">Agregar</button></div>';
+        }).join('')+'</div>';
+    }
     $$('cartTotal').textContent=fmt(cartSubtotal()); foot.style.display='';
   }
   function openCart(){
@@ -2786,6 +2904,22 @@
       const up=()=>{ tk=false; const max=html.scrollHeight-innerHeight; prog.style.transform='scaleX('+(max>0?Math.min(1,scrollY/max):0)+')'; };
       window.addEventListener('scroll',()=>{ if(!tk){ tk=true; requestAnimationFrame(up); } },{passive:true});
       up();
+    }
+
+    /* 4b. Burbuja «¿Te ayudamos a elegir?»: una vez por visita, a los 12 s */
+    const tip=$$('waTip'); let tipShown=false;
+    try{ tipShown = sessionStorage.getItem('tc_tip')==='1'; }catch(e){}
+    window.hideWaTip=function(forever){
+      if(!tip) return; tip.classList.remove('show'); setTimeout(()=>{ tip.hidden=true; },400);
+      if(forever){ try{ sessionStorage.setItem('tc_tip','1'); }catch(e){} }
+    };
+    if(tip && !tipShown){
+      setTimeout(()=>{
+        if(html.classList.contains('ov-open')) return;
+        tip.hidden=false; requestAnimationFrame(()=>requestAnimationFrame(()=>tip.classList.add('show')));
+        try{ sessionStorage.setItem('tc_tip','1'); }catch(e){}
+        setTimeout(()=>window.hideWaTip(false), 10000);
+      }, 12000);
     }
 
     /* 5. Pausar lo que se mueve en bucle cuando no está en pantalla */
