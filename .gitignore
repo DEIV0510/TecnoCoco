@@ -13,3 +13,7 @@ ehthumbs.db
 # Editores
 .vscode/
 .idea/
+
+# Configuración local de Claude (subida automática) y restos de pruebas
+.claude/
+.playwright-mcp/
