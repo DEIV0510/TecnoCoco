@@ -87,6 +87,9 @@
         { "@type": "Product", "position": 9, "name": "Mini Aro de Luz Recargable", "category": "Gadget", "image": "https://tecnococo.co/img/p_smartwatch.jpg", "description": "Compacto y recargable, ideal para selfies y videollamadas.", "brand": { "@type": "Brand", "name": "TecnoCoco" }, "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "165" }, "offers": { "@type": "Offer", "price": "39900", "priceCurrency": "COP", "availability": "https://schema.org/InStock", "itemCondition": "https://schema.org/NewCondition" } },
         { "@type": "Product", "position": 10, "name": "Aro de Luz 33 cm", "category": "Gadget", "image": "https://tecnococo.co/img/p_smartband.jpg", "description": "33 cm con 3 tonos y 10 niveles. Iluminación profesional.", "brand": { "@type": "Brand", "name": "TecnoCoco" }, "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "312" }, "offers": { "@type": "Offer", "price": "89900", "priceCurrency": "COP", "availability": "https://schema.org/InStock", "itemCondition": "https://schema.org/NewCondition" } },
         { "@type": "Product", "position": 11, "name": "Bombillo Parlante Bluetooth LED RGB", "category": "Gadget", "image": "https://tecnococo.co/img/p_aroluz.jpg", "description": "2 en 1: bombillo LED RGB con parlante Bluetooth integrado.", "brand": { "@type": "Brand", "name": "TecnoCoco" }, "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "188" }, "offers": { "@type": "Offer", "price": "49900", "priceCurrency": "COP", "availability": "https://schema.org/InStock", "itemCondition": "https://schema.org/NewCondition" } },
+        { "@type": "Product", "position": 13, "name": "Combo 2 cámaras WiFi 360°", "category": "Seguridad", "image": "https://tecnococo.co/img/p_camx2.jpg", "description": "Dos cámaras WiFi con giro de 360°, visión nocturna y protección IP66.", "brand": { "@type": "Brand", "name": "Jortan" }, "offers": { "@type": "Offer", "price": "229900", "priceCurrency": "COP", "availability": "https://schema.org/InStock", "itemCondition": "https://schema.org/NewCondition" } },
+        { "@type": "Product", "position": 14, "name": "Smartwatch W200 + audífonos F140", "category": "Combo", "image": "https://tecnococo.co/img/p_w200.jpg", "description": "Reloj inteligente con 2 correas y audífonos Bluetooth con estuche de carga.", "brand": { "@type": "Brand", "name": "TecnoCoco" }, "offers": { "@type": "Offer", "price": "139900", "priceCurrency": "COP", "availability": "https://schema.org/InStock", "itemCondition": "https://schema.org/NewCondition" } },
+        { "@type": "Product", "position": 15, "name": "Smartwatch KR Ultra 3 49 mm", "category": "Smartwatch", "image": "https://tecnococo.co/img/p_krultra3.jpg", "description": "Pantalla de 2,1 pulgadas, llamadas por Bluetooth y resistencia IPX7.", "brand": { "@type": "Brand", "name": "TecnoCoco" }, "offers": { "@type": "Offer", "price": "119900", "priceCurrency": "COP", "availability": "https://schema.org/InStock", "itemCondition": "https://schema.org/NewCondition" } },
         { "@type": "Product", "position": 12, "name": "Soporte Holder Impermeable Moto", "category": "Gadget", "image": "https://tecnococo.co/img/p_soporte.jpg", "description": "Resistente al agua, fijación firme al manubrio.", "brand": { "@type": "Brand", "name": "TecnoCoco" }, "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.7", "reviewCount": "143" }, "offers": { "@type": "Offer", "price": "45900", "priceCurrency": "COP", "availability": "https://schema.org/InStock", "itemCondition": "https://schema.org/NewCondition" } }
       ]
     },
@@ -1179,6 +1182,8 @@
     .buy-row .buy svg,.buy-row .add-cart svg{width:15px;height:15px}
   }
   @media(max-width:359px){.buy-row .add-cart svg{display:none}}
+  /* Sección de 3 productos (Recién llegados) */
+  @media(min-width:761px){.product-grid.grid-3{grid-template-columns:repeat(3,1fr)}}
 
   /* BANNER con fotos reales de productos */
   .banner{padding:56px}
@@ -1227,7 +1232,7 @@
   .contact-info .i{width:16px;height:16px;color:var(--gold)}
 
   /* DETALLE, CARRITO, BUSCADOR */
-  .pdetail-trust div .ico{display:flex;justify-content:center}
+  .pdetail-trust div .ico{display:flex;justify-content:center;border:0;padding:0;margin-bottom:6px}
   .pdetail-trust .i{width:20px;height:20px}
   .pdetail-buy,.cart-checkout{box-shadow:none}
   .pdetail-buy:hover,.cart-checkout:hover{box-shadow:none;transform:none}
@@ -1549,6 +1554,7 @@
       </span>
     </a>
     <nav class="nav-links">
+      <a href="#nuevos">Nuevos</a>
       <a href="#categorias">Categorías</a>
       <a href="#audifonos">Audífonos</a>
       <a href="#cargadores">Cargadores</a>
@@ -1581,6 +1587,7 @@
   <a href="javascript:void(0)" onclick="closeMenu();openSearch()">Buscar productos</a>
   <a href="javascript:void(0)" onclick="closeMenu();openFavorites()">Mis favoritos</a>
   <a href="javascript:void(0)" onclick="closeMenu();openCart()">Ver carrito</a>
+  <a href="#nuevos" onclick="closeMenu()">Recién llegados</a>
   <a href="#categorias" onclick="closeMenu()">Categorías</a>
   <a href="#audifonos" onclick="closeMenu()">Audífonos</a>
   <a href="#cargadores" onclick="closeMenu()">Cargadores</a>
@@ -1695,8 +1702,8 @@
 <!-- ============ CINTA EDITORIAL ============ -->
 <div class="band" aria-hidden="true">
   <div class="band-row">
-    <div class="band-set"><b>Audífonos</b><i></i><em>cargadores</em><i></i><b class="o">Aros de luz</b><i></i><em>gadgets</em><i></i><b>Powerbanks</b><i></i></div>
-    <div class="band-set"><b>Audífonos</b><i></i><em>cargadores</em><i></i><b class="o">Aros de luz</b><i></i><em>gadgets</em><i></i><b>Powerbanks</b><i></i></div>
+    <div class="band-set"><b>Audífonos</b><i></i><em>cargadores</em><i></i><b class="o">Smartwatch</b><i></i><em>cámaras wifi</em><i></i><b>Aros de luz</b><i></i><em>gadgets</em><i></i></div>
+    <div class="band-set"><b>Audífonos</b><i></i><em>cargadores</em><i></i><b class="o">Smartwatch</b><i></i><em>cámaras wifi</em><i></i><b>Aros de luz</b><i></i><em>gadgets</em><i></i></div>
   </div>
   <div class="band-row rev">
     <div class="band-set"><b>Envío gratis</b><i></i><em>pago contra entrega</em><i></i><b>Garantía 1 mes</b><i></i><em>despacho 24 h</em><i></i></div>
@@ -1704,8 +1711,74 @@
   </div>
 </div>
 
+<!-- ============ RECIÉN LLEGADOS ============ -->
+<section class="section" id="nuevos">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <h2>Recién <em>llegados</em></h2>
+        <p>Smartwatch con llamadas y cámaras de seguridad WiFi. Para regalar o para cuidar tu casa.</p>
+      </div>
+    </div>
+    <div class="product-grid grid-3">
+
+      <article class="product reveal">
+        <div class="product-img"><span class="shine"></span>
+          <span class="badge sale">Combo x2</span>
+          <img src="img/p_camx2.jpg" alt="Combo de 2 cámaras de seguridad WiFi 360°">
+        </div>
+        <div class="product-body">
+          <span class="product-cat">Seguridad</span>
+          <h3 class="product-name">Combo 2 cámaras WiFi 360°</h3>
+          <p class="product-desc">Giro de 360°, visión nocturna y a color, IP66. Las ves en vivo desde el celular.</p>
+          <div class="price-row"><span class="price">$229.900</span></div>
+          <span class="stock"><span class="dot"></span> En stock</span>
+          <a class="buy" target="_blank" href="https://wa.me/573105490250?text=Hola%20TecnoCoco%2C%20me%20interesa%20el%20Combo%202%20c%C3%A1maras%20WiFi%20360%C2%B0%20%28%24229.900%29">
+            <svg><use href="#wa"/></svg> Comprar por WhatsApp
+          </a>
+        </div>
+      </article>
+
+      <article class="product reveal reveal-delay-1">
+        <div class="product-img"><span class="shine"></span>
+          <span class="badge sale">Combo</span>
+          <img src="img/p_w200.jpg" alt="Smartwatch W200 con audífonos F140">
+        </div>
+        <div class="product-body">
+          <span class="product-cat">Combo</span>
+          <h3 class="product-name">Smartwatch W200 + audífonos F140</h3>
+          <p class="product-desc">Reloj con 2 correas y audífonos Bluetooth con estuche de carga.</p>
+          <div class="price-row"><span class="price">$139.900</span></div>
+          <span class="stock"><span class="dot"></span> En stock</span>
+          <a class="buy" target="_blank" href="https://wa.me/573105490250?text=Hola%20TecnoCoco%2C%20me%20interesa%20el%20Smartwatch%20W200%20%2B%20aud%C3%ADfonos%20F140%20%28%24139.900%29">
+            <svg><use href="#wa"/></svg> Comprar por WhatsApp
+          </a>
+        </div>
+      </article>
+
+      <article class="product reveal reveal-delay-2">
+        <div class="product-img"><span class="shine"></span>
+          <span class="badge new">Nuevo</span>
+          <img src="img/p_krultra3.jpg" alt="Smartwatch KR Ultra 3 de 49 mm">
+        </div>
+        <div class="product-body">
+          <span class="product-cat">Smartwatch</span>
+          <h3 class="product-name">Smartwatch KR Ultra 3 · 49 mm</h3>
+          <p class="product-desc">Pantalla de 2,1", llamadas por Bluetooth y resistencia IPX7. 6 colores.</p>
+          <div class="price-row"><span class="price">$119.900</span></div>
+          <span class="stock"><span class="dot"></span> En stock</span>
+          <a class="buy" target="_blank" href="https://wa.me/573105490250?text=Hola%20TecnoCoco%2C%20me%20interesa%20el%20Smartwatch%20KR%20Ultra%203%20de%2049%20mm%20%28%24119.900%29">
+            <svg><use href="#wa"/></svg> Comprar por WhatsApp
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
 <!-- ============ AUDÍFONOS ============ -->
-<section class="section" id="audifonos">
+<section class="section" id="audifonos" style="padding-top:0">
   <div class="container">
     <div class="section-head reveal">
       <div>
@@ -2155,6 +2228,7 @@
       <p>Todos nuestros productos en un solo lugar. Haz click en cualquiera para ver detalles.</p>
       <div class="catalog-filters">
         <button class="cat-filter active" data-filter="all" onclick="filterCatalog('all',this)">Todos</button>
+        <button class="cat-filter" data-filter="nuevos" onclick="filterCatalog('nuevos',this)">Nuevos</button>
         <button class="cat-filter" data-filter="audifonos" onclick="filterCatalog('audifonos',this)">Audífonos</button>
         <button class="cat-filter" data-filter="cargadores" onclick="filterCatalog('cargadores',this)">Cargadores</button>
         <button class="cat-filter" data-filter="gadgets" onclick="filterCatalog('gadgets',this)">Gadgets</button>
@@ -2221,6 +2295,7 @@
     <div class="search-results" id="searchResults" role="listbox" aria-label="Resultados de búsqueda"></div>
     <div class="search-chips" id="searchChips">
       <span class="lbl">Populares:</span>
+      <button class="search-chip" type="button" onclick="quickSearch('Smartwatch')">Smartwatch</button>
       <button class="search-chip" type="button" onclick="quickSearch('AirPods')">AirPods</button>
       <button class="search-chip" type="button" onclick="quickSearch('Cargador')">Cargadores</button>
       <button class="search-chip" type="button" onclick="quickSearch('Aro de luz')">Aros de luz</button>
@@ -2264,6 +2339,9 @@
     'p_smartwatch':{name:'Mini Aro de Luz Recargable',cat:'Gadget',price:39900,priceOld:null,img:'img/p_smartwatch.jpg',rating:4.8,reviews:165,sold:'+150 vendidos',desc:'Mini aro de luz LED recargable, súper compacto. Se engancha al celular y va contigo a todas partes. Ideal para selfies, TikTok y videollamadas en cualquier lugar.',specs:{'Diámetro':'10-13 cm aprox','Tonos':'3 (frío, neutro, cálido)','Intensidades':'3 niveles','Batería':'Recargable USB-C','Duración':'2-3 horas continuas','Fijación':'Clip universal para celular','Carga':'1.5 horas para carga completa','Ideal para':'Selfies, redes sociales, videollamadas'},related:['p_smartband','p_aroluz','p_soporte']},
     'p_smartband':{name:'Aro de Luz 33 cm',cat:'Gadget',price:89900,priceOld:null,img:'img/p_smartband.jpg',rating:4.9,reviews:312,sold:'+300 vendidos',desc:'Aro de luz profesional de 33 cm de diámetro. 3 tonos de luz, 10 niveles de intensidad y control remoto Bluetooth. Trípode ajustable incluido.',specs:{'Diámetro':'33 cm','Tonos':'3 (frío 6500K, neutro 4500K, cálido 3200K)','Intensidades':'10 niveles ajustables','Trípode':'Incluido (ajustable hasta 1.6 m)','Soporte celular':'Universal incluido','Control remoto':'Bluetooth incluido','Alimentación':'USB (cable incluido)','Ideal para':'YouTube, TikTok, maquillaje, streaming'},related:['p_smartwatch','p_aroluz','p_soporte']},
     'p_aroluz':{name:'Bombillo Parlante Bluetooth LED RGB',cat:'Gadget',price:49900,priceOld:null,img:'img/p_aroluz.jpg',rating:4.8,reviews:188,sold:'+180 vendidos',desc:'2 productos en 1: bombillo LED RGB con parlante Bluetooth integrado. Cambia de colores al ritmo de tu música. Control por app y remoto.',specs:{'Tipo':'Bombillo + parlante Bluetooth','Colores':'16 millones (RGB)','Conexión':'Bluetooth 5.0','Potencia bombillo':'12W','Potencia audio':'5W estéreo','Sócket':'E27 (rosca universal)','Control':'App + remoto incluido','Modos':'Música, fiesta, lectura, descanso','Compatibilidad':'iOS / Android'},related:['p_smartwatch','p_smartband','p_soporte']},
+    'p_camx2':{name:'Combo 2 cámaras WiFi 360°',cat:'Seguridad',price:229900,priceOld:null,img:'img/p_camx2.jpg',rating:null,reviews:null,sold:null,desc:'Dos cámaras de seguridad inteligentes Jortan JT-8161QJ con WiFi y giro de 360°. Se configuran desde el celular con la app YooSee y muestran la imagen en vivo desde cualquier lugar. Sirven para interior y exterior, con visión a color de día y visión nocturna.',specs:{'Incluye':'2 cámaras','Modelo':'Jortan JT-8161QJ','Conexión':'WiFi','Giro':'360°','Video':'HD','Visión':'A color de día y nocturna','Protección':'IP66 (agua y polvo)','App':'YooSee','Garantía':'Por defectos de fábrica'},related:['p_krultra3','p_w200','p_powerbank']},
+    'p_w200':{name:'Smartwatch W200 + audífonos F140',cat:'Combo',price:139900,priceOld:null,img:'img/p_w200.jpg',rating:null,reviews:null,sold:null,desc:'Combo de reloj inteligente W-200 con 2 correas intercambiables y audífonos Bluetooth F-140 con estuche de carga. El reloj muestra tus notificaciones y registra tu actividad.',specs:{'Incluye':'Smartwatch W-200 + audífonos F-140','Correas':'2 intercambiables','Reloj':'Notificaciones y monitoreo de actividad','Audífonos':'Bluetooth con estuche de carga','Colores':'Negro, naranja y verde'},related:['p_krultra3','p_airpods','p_bluetooth']},
+    'p_krultra3':{name:'Smartwatch KR Ultra 3 · 49 mm',cat:'Smartwatch',price:119900,priceOld:null,img:'img/p_krultra3.jpg',rating:null,reviews:null,sold:null,desc:'Reloj inteligente con caja de aluminio de 49 mm y pantalla de 2,1 pulgadas, resistente al agua IPX7. Llamadas por Bluetooth desde la muñeca, notificaciones de WhatsApp, llamadas y redes, y registro de pasos, calorías, sueño y ritmo cardíaco. Reloj genérico: no es un Apple Watch.',specs:{'Modelo':'KR Ultra 3','Caja':'49 mm de aluminio','Pantalla':'2,1"','Resistencia':'IPX7 (sudor, lluvia y salpicaduras)','Llamadas':'Por Bluetooth','Carga':'Magnética','Compatibilidad':'Android y iPhone','Incluye':'Reloj con correa + cable de carga','Colores':'Azul, azul oscuro, verde, verde claro, naranja y rosado','Salud':'Datos de referencia, no de uso médico','Garantía':'30 días por defectos de fábrica'},related:['p_w200','p_camx2','p_airpods']},
     'p_soporte':{name:'Soporte Holder Base Impermeable Moto',cat:'Gadget',price:45900,priceOld:null,img:'img/p_soporte.jpg',rating:4.7,reviews:143,sold:'+140 vendidos',desc:'Soporte para moto resistente al agua y a vibraciones. Fijación firme al manubrio. Perfecto para domiciliarios, conductores y motoristas que usan GPS.',specs:{'Material':'Aluminio + silicona reforzada','Resistencia':'Impermeable a la lluvia','Instalación':'Manubrio o espejo retrovisor','Rotación':'360° con bloqueo','Ajuste celular':'4.5" a 6.7"','Vibración':'Anti-vibración silicona','Sujeción':'4 esquinas con resorte','Ideal para':'Domiciliarios, motoristas, Rappi/Didi'},related:['p_smartwatch','p_smartband','p_aroluz']}
   };
 
@@ -2277,8 +2355,14 @@
     $$('pm-img').src = p.img; $$('pm-img').alt = p.name;
     $$('pm-cat').textContent = p.cat;
     $$('pm-name').textContent = p.name;
-    $$('pm-rating').textContent = p.rating + ' (' + p.reviews + ')';
-    $$('pm-sold').textContent = p.sold;
+    const ratingRow = document.querySelector('.pdetail-rating');
+    if(p.rating){
+      ratingRow.style.display = '';
+      $$('pm-rating').textContent = p.rating + ' (' + p.reviews + ')';
+      $$('pm-sold').textContent = p.sold;
+    } else {
+      ratingRow.style.display = 'none';   /* producto nuevo: sin reseñas todavía */
+    }
     $$('pm-price').textContent = fmt(p.price);
     if(p.priceOld){
       $$('pm-price-old').textContent = fmt(p.priceOld);
@@ -2327,6 +2411,7 @@
 
   /* ============ CATÁLOGO COMPLETO ============ */
   const CATEGORIES = {
+    nuevos:    {title:'Nuevos', ids:['p_camx2','p_w200','p_krultra3']},
     audifonos: {title:'Audífonos', ids:['p_airpods','p_bluetooth','p_overear','p_sport']},
     cargadores:{title:'Cargadores', ids:['p_cargador20w','p_cable','p_powerbank','p_cargadorqi']},
     gadgets:   {title:'Gadgets', ids:['p_smartwatch','p_smartband','p_aroluz','p_soporte']}
@@ -2335,7 +2420,7 @@
     const grid = $$('catalog-grid'); grid.innerHTML='';
     let ids;
     if(filter==='all'){
-      ids = [...CATEGORIES.audifonos.ids, ...CATEGORIES.cargadores.ids, ...CATEGORIES.gadgets.ids];
+      ids = [...CATEGORIES.nuevos.ids, ...CATEGORIES.audifonos.ids, ...CATEGORIES.cargadores.ids, ...CATEGORIES.gadgets.ids];
     } else {
       ids = CATEGORIES[filter].ids;
     }
@@ -2361,7 +2446,7 @@
       b.classList.toggle('active', b.dataset.filter===filter);
     });
     // título dinámico
-    const titles = {all:'Catálogo <em>completo</em>', audifonos:'Audífonos & <em>AirPods</em>', cargadores:'Cargadores & <em>Cables</em>', gadgets:'Gadgets & <em>Accesorios</em>'};
+    const titles = {all:'Catálogo <em>completo</em>', nuevos:'Recién <em>llegados</em>', audifonos:'Audífonos & <em>AirPods</em>', cargadores:'Cargadores & <em>Cables</em>', gadgets:'Gadgets & <em>Accesorios</em>'};
     $$('catalog-title').innerHTML = titles[filter] || titles.all;
     renderCatalog(filter);
     rememberFocus();
@@ -2374,7 +2459,7 @@
   function filterCatalog(filter, btn){
     document.querySelectorAll('.cat-filter').forEach(b=>b.classList.remove('active'));
     btn.classList.add('active');
-    const titles = {all:'Catálogo <em>completo</em>', audifonos:'Audífonos & <em>AirPods</em>', cargadores:'Cargadores & <em>Cables</em>', gadgets:'Gadgets & <em>Accesorios</em>'};
+    const titles = {all:'Catálogo <em>completo</em>', nuevos:'Recién <em>llegados</em>', audifonos:'Audífonos & <em>AirPods</em>', cargadores:'Cargadores & <em>Cables</em>', gadgets:'Gadgets & <em>Accesorios</em>'};
     $$('catalog-title').innerHTML = titles[filter] || titles.all;
     renderCatalog(filter);
   }
