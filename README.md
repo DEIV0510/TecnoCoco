@@ -8,7 +8,7 @@ Tienda online de **accesorios y gadgets de tecnología** en Colombia: audífonos
 
 ## ✨ Características
 
-- **Catálogo de 12 productos** con modal de detalle (especificaciones, valoraciones, productos relacionados).
+- **Catálogo de 13 productos** con modal de detalle (especificaciones, valoraciones, productos relacionados).
 - **Buscador en vivo** (ignora tildes, navegable con teclado).
 - **Carrito de compras** con cantidades y persistencia local, que arma el pedido completo y lo envía por **WhatsApp**.
 - **Favoritos** guardados en el navegador.
