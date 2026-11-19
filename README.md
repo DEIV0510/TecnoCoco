@@ -8,7 +8,7 @@ Tienda online de **accesorios y gadgets de tecnología** en Colombia: audífonos
 
 ## ✨ Características
 
-- **Catálogo de 12 productos** con modal de detalle (especificaciones, valoraciones, productos relacionados).
+- **Catálogo de 13 productos** con modal de detalle (especificaciones, valoraciones, productos relacionados).
 - **Buscador en vivo** (ignora tildes, navegable con teclado).
 - **Carrito de compras** con cantidades y persistencia local, que arma el pedido completo y lo envía por **WhatsApp**.
 - **Favoritos** guardados en el navegador.
@@ -30,12 +30,7 @@ Un solo archivo `index.html` (HTML + CSS + JavaScript, sin dependencias ni build
 
 ## 🖼️ Imágenes
 
-Las fotos de producto van en `img/` con nombres fijos. **Faltan por agregar** (hoy se muestran con un placeholder de marca):
-
-- `img/p_overear.jpg` — Headphones Over-Ear Bass+
-- `img/p_cargadorqi.jpg` — Cargador inalámbrico Qi 15W
-
-El banner de cargadores ya usa las fotos reales de los productos (no necesita `banner.jpg`).
+Las fotos de producto van en `img/` con nombres fijos (`p_*.jpg`). Los productos nuevos vienen de Dropi con las fotos del proveedor, recortadas y optimizadas.
 
 ## ⚙️ Personalización
 
