@@ -34,7 +34,8 @@ Las fotos de producto van en `img/` con nombres fijos. **Faltan por agregar** (h
 
 - `img/p_overear.jpg` — Headphones Over-Ear Bass+
 - `img/p_cargadorqi.jpg` — Cargador inalámbrico Qi 15W
-- `img/banner.jpg` — banner promocional de cargadores
+
+El banner de cargadores ya usa las fotos reales de los productos (no necesita `banner.jpg`).
 
 ## ⚙️ Personalización
 

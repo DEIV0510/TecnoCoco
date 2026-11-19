@@ -1052,6 +1052,193 @@
     .pl-logo{width:96px; height:96px; border-radius:22px}
     .pl-name{font-size:26px}
   }
+
+  /* ============================================================
+     PULIDO 2026-11 · esquinas rectas, sin adornos de plantilla,
+     tarjetas limpias y página más corta (misma paleta y fuentes)
+     ============================================================ */
+  :root{--radius:0}
+  *,*::before,*::after{border-radius:0!important}
+  /* Lo que por convención sigue siendo redondo */
+  .stock .dot,.pdetail-stock .dot,.float-wa,.pl-stage .wave,.pl-ring,.cart-count,.test-author .avatar{border-radius:50%!important}
+
+  /* Íconos SVG (reemplazan emojis) */
+  .i{width:20px;height:20px;flex-shrink:0;display:block}
+
+  /* Menos movimiento decorativo */
+  .badge,.cell-big .cell-label,.hero-art,.logo-frame,.bento-glow,.cell-brand::before,.stock .dot,.pdetail-stock .dot{animation:none}
+  .logo-ring,.float-wa::before,.btn-primary::before,.buy::before,.product-img .shine{display:none}
+
+  /* NAV */
+  .brand-text .tag{white-space:nowrap}
+  @media(max-width:1100px){.brand-text .tag{display:none}}
+  .nav-cta:hover,.btn-primary:hover{box-shadow:none}
+
+  /* HERO: rótulo sin píldora */
+  .eyebrow{background:none;border:0;padding:0;gap:12px;font-size:12px;letter-spacing:.22em}
+  .eyebrow .dot{width:28px;height:1px;background:var(--gold);animation:none}
+  .cell-ship .ship-ico .i{width:32px;height:32px;color:var(--gold)}
+  .cell{box-shadow:none}
+  .cell-big .cell-info{flex-direction:column;align-items:flex-start;gap:2px}
+  .cell-big .cell-price{font-size:17px}
+  .cell-big .cell-label{white-space:nowrap}
+  @media(max-width:880px){.hero{padding:44px 0 56px}}
+  @media(max-width:480px){
+    .eyebrow{font-size:10.5px;letter-spacing:.16em;gap:10px;margin-bottom:18px}
+    .eyebrow .dot{width:20px}
+    .hero-ctas .btn{flex:1 1 100%;justify-content:center}
+    .cell-big .cell-label{font-size:9px;padding:4px 7px;top:10px;left:10px}
+  }
+  @media(max-width:560px){.cell-ship .ship-ico .i{width:24px;height:24px}}
+
+  /* FRANJA DE BENEFICIOS */
+  .features-grid{padding:26px 0}
+  .feature-icon{width:44px;height:44px;color:var(--gold)}
+  .feature-icon .i{width:22px;height:22px}
+  .feature:hover .feature-icon{transform:none;background:var(--white)}
+  @media(max-width:760px){.features-grid{gap:16px 12px;padding:20px 0}.feature{font-size:12px;gap:10px}.feature b{font-size:13px}.feature-icon{width:38px;height:38px}.feature-icon .i{width:19px;height:19px}}
+
+  /* SECCIONES más cortas */
+  .section,.testimonials,.faq{padding:84px 0}
+  .about{padding:96px 0}
+  .contact{padding:90px 0}
+  .section-head{margin-bottom:34px}
+  @media(max-width:760px){
+    .section,.testimonials,.faq{padding:56px 0}
+    .about,.contact{padding:64px 0}
+    .section-head{margin-bottom:22px;gap:12px}
+    .section-head p{font-size:14px}
+  }
+
+  /* CATEGORÍAS */
+  .cat-card:hover{transform:translateY(-4px)}
+  .cat-card .info .arrow{width:38px;height:38px}
+  @media(max-width:760px){
+    .cat-grid{gap:10px}
+    .cat-card{aspect-ratio:16/7}
+    .cat-card .info{left:16px;right:16px;bottom:14px}
+    .cat-card .info h3{font-size:18px}
+    .cat-card .info .arrow{width:34px;height:34px;font-size:16px}
+  }
+
+  /* TARJETAS DE PRODUCTO: un solo filete, acciones en una fila fina */
+  .product::before{display:none}
+  .product:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(11,11,12,.10);border-color:var(--gold)}
+  .product-img{margin:0;border:0;border-bottom:1px solid var(--line);box-shadow:none;padding:22px}
+  .product-img::before,.product-img::after{display:none}
+  .product:hover .product-img img{transform:scale(1.04);filter:none}
+  .badge{top:12px;left:12px;font-size:10px;padding:5px 9px;letter-spacing:.12em;text-transform:uppercase;box-shadow:none}
+  .badge.new{background:var(--black);color:var(--gold-bright);border-color:rgba(201,162,75,.5)}
+  .badge.sale{background:var(--gold);color:var(--black)}
+  .product-actions{top:12px;right:12px}
+  .fav-btn{width:36px;height:36px;background:#fff;border-color:var(--line);box-shadow:none}
+  .fav-btn:hover{transform:none}
+  .product-body{padding:16px 18px 18px;gap:6px}
+  .product-rating .stars{text-shadow:none}
+  .product-desc{flex:0 0 auto;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .price-row{margin-top:auto;padding-top:6px}
+  .price{font-size:21px}
+  .price::after{display:none}
+  .stock{color:#15803d;font-size:12px}
+  .stock .dot{background:#15803d}
+  .buy-row{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:14px -18px -18px;border-top:1px solid var(--line)}
+  .buy-row .buy,.buy-row .add-cart{
+    margin:0;height:48px;width:auto;padding:0 8px;display:flex;align-items:center;justify-content:center;gap:8px;
+    background:transparent;color:var(--black);border:0;box-shadow:none;
+    font-family:inherit;font-size:13px;font-weight:700;letter-spacing:.02em;cursor:pointer;transition:background .2s,color .2s;
+  }
+  .buy-row .add-cart{border-left:1px solid var(--line)}
+  .buy-row .buy svg,.buy-row .add-cart svg{width:17px;height:17px;flex-shrink:0;transition:none}
+  .buy-row .buy svg{color:#1ea952}
+  .buy-row .add-cart svg{color:var(--gold)}
+  .buy-row .buy:hover{background:var(--black);color:#fff;transform:none;box-shadow:none}
+  .buy-row .buy:hover svg{color:var(--whats);transform:none}
+  .buy-row .add-cart:hover{background:var(--gold);color:var(--black);transform:none}
+  .buy-row .add-cart:hover svg{color:var(--black)}
+  .buy-row .add-cart.added{background:#15803d;color:#fff}
+  .buy-row .add-cart.added svg{color:#fff}
+  @media(max-width:480px){
+    .product-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+    .product:hover{transform:none}
+    .product-img{padding:12px}
+    .product-body{padding:12px 12px 12px;gap:4px}
+    .product-cat{font-size:10px;letter-spacing:.1em}
+    .product-cat::before{display:none}
+    .product-name{font-size:14px}
+    .product-rating{font-size:11px;gap:4px}
+    .product-rating .stars{letter-spacing:0}
+    .product-desc,.stock{display:none}
+    .price{font-size:17px}
+    .price-row{gap:6px;flex-wrap:wrap}
+    .price-old{font-size:11px}
+    .badge{top:8px;left:8px;font-size:9px;padding:4px 6px}
+    .product-actions{top:6px;right:6px}
+    .buy-row{margin:10px -12px -12px}
+    .buy-row .buy,.buy-row .add-cart{height:44px;font-size:12px;gap:6px;padding:0 4px}
+    .buy-row .buy svg,.buy-row .add-cart svg{width:15px;height:15px}
+  }
+  @media(max-width:359px){.buy-row .add-cart svg{display:none}}
+
+  /* BANNER con fotos reales de productos */
+  .banner{padding:56px}
+  .banner-shots{display:grid;grid-template-columns:1.3fr 1fr;grid-template-rows:1fr 1fr;gap:10px;height:300px;position:relative}
+  .banner .banner-shots img{width:100%;height:100%;object-fit:contain;background:#fff;padding:14px;border:1px solid rgba(201,162,75,.3);box-shadow:none}
+  .banner .banner-shots img:first-child{grid-row:1/3;padding:22px}
+  @media(max-width:860px){.banner{padding:36px 22px}.banner-shots{height:230px}}
+
+  /* TESTIMONIOS: deslizables en celular */
+  .test-card:hover{transform:none;box-shadow:none;border-color:var(--gold)}
+  .test-card .quote{font-size:34px;margin-bottom:6px}
+  @media(max-width:860px){
+    .testimonial-grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:0 -24px;padding:0 24px 6px;scrollbar-width:none}
+    .testimonial-grid::-webkit-scrollbar{display:none}
+    .test-card{flex:0 0 82%;scroll-snap-align:center;padding:24px}
+    .testimonial-grid .reveal{opacity:1;transform:none}
+  }
+
+  /* NOSOTROS: un bloque, sin rótulo-píldora */
+  .about{background:var(--white)}
+  .about::before,.about::after{display:none}
+  .about-main{gap:72px}
+  .logo-frame{width:280px;height:280px}
+  .logo-tagline{margin-top:28px}
+  .about-content h2{font-size:clamp(30px,3.6vw,44px);letter-spacing:-.03em;margin:0 0 18px;font-weight:800;line-height:1.08}
+  .about-content h2 em{color:var(--gold);font-style:italic;font-family:'Playfair Display',serif;font-weight:900}
+  .pillars{list-style:none;padding:0;gap:0;margin:28px 0 0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+  .pillar{background:transparent;border:0;border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px;display:grid;grid-template-columns:auto 1fr;column-gap:14px;align-items:start}
+  .pillar:hover{transform:none;box-shadow:none;background:var(--cream)}
+  .pillar-icon{width:36px;height:36px;margin:0;grid-row:1/3}
+  .pillar-icon .i{width:18px;height:18px}
+  .pillar h4{margin:2px 0 4px}
+  .about-cta .btn:hover{transform:none}
+  @media(max-width:960px){.about-main{gap:40px;text-align:left}.about-cta{justify-content:flex-start}}
+  @media(max-width:760px){.about-logo-col{display:none}.pillar{padding:14px}}
+
+  /* FAQ */
+  .faq-item{margin-bottom:-1px}
+  .faq-item:hover{position:relative}
+  .faq-q .ico{background:transparent;border:1px solid var(--gold)}
+  @media(max-width:760px){.faq-q{padding:16px 18px;font-size:15px;gap:14px}.faq-a{padding:0 18px}.faq-item.open .faq-a{padding:0 18px 18px}}
+
+  /* CONTACTO */
+  .contact-cta{box-shadow:none}
+  .contact-cta:hover{box-shadow:none}
+  .contact-info .i{width:16px;height:16px;color:var(--gold)}
+
+  /* DETALLE, CARRITO, BUSCADOR */
+  .pdetail-trust div .ico{display:flex;justify-content:center}
+  .pdetail-trust .i{width:20px;height:20px}
+  .pdetail-buy,.cart-checkout{box-shadow:none}
+  .pdetail-buy:hover,.cart-checkout:hover{box-shadow:none;transform:none}
+  .pdetail-price{background:var(--cream)}
+  .cart-note .i{width:13px;height:13px}
+  .search-empty .big{display:flex;justify-content:center;color:var(--gold)}
+  .search-empty .big .i{width:34px;height:34px}
+  @media(max-width:420px){.catalog-grid{grid-template-columns:repeat(2,1fr);gap:10px}}
+
+  /* WHATSAPP FLOTANTE */
+  .float-wa{box-shadow:0 8px 22px rgba(11,11,12,.25)}
+  @media(max-width:480px){.float-wa{width:54px;height:54px;right:16px;bottom:16px}.float-wa svg{width:26px;height:26px}}
 </style>
 </head>
 <body>
@@ -1092,9 +1279,10 @@
   if(reduce){ hide(); return; }
   var timer=setInterval(function(){ if(p<90){ set(p+Math.max(0.6,(90-p)*0.05)); } }, 95);
   function complete(){ clearInterval(timer); var c=p; var t2=setInterval(function(){ c+=3.5; if(c>=100){ c=100; clearInterval(t2); hide(); } set(c); }, 16); }
-  if(document.readyState==='complete'){ setTimeout(complete,350); }
-  else { window.addEventListener('load', function(){ setTimeout(complete,350); }); }
-  setTimeout(function(){ if(!done){ clearInterval(timer); complete(); } }, 4200); /* seguridad: nunca se queda pegado */
+  /* Se va apenas la página está lista (sin esperar todas las fotos) */
+  if(document.readyState!=='loading'){ setTimeout(complete,150); }
+  else { document.addEventListener('DOMContentLoaded', function(){ setTimeout(complete,150); }); }
+  setTimeout(function(){ if(!done){ clearInterval(timer); complete(); } }, 1800); /* seguridad: nunca se queda pegado */
 })();
 </script>
 
@@ -1132,6 +1320,15 @@
     <symbol id="ic-minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14"/></symbol>
     <symbol id="ic-trash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"/></symbol>
     <symbol id="ic-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="ic-truck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.62l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></symbol>
+    <symbol id="ic-cash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></symbol>
+    <symbol id="ic-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="ic-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></symbol>
+    <symbol id="ic-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></symbol>
+    <symbol id="ic-verified" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><path d="m8 12 3 3 5-6"/></symbol>
+    <symbol id="ic-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></symbol>
+    <symbol id="ic-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="ic-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
   </defs>
 </svg>
 
@@ -1141,14 +1338,14 @@
 <!-- ============ TOP ANNOUNCEMENT ============ -->
 <div class="topbar">
   <div class="marquee">
-    <span>🚚 <b>Envío gratis</b> a toda Colombia</span>
-    <span>🛡️ <b>Garantía</b> de 1 mes en todos los productos</span>
-    <span>💳 <b>Pago contra entrega</b> en todo el país</span>
-    <span>⚡ Despacho en <b>24 horas</b></span>
-    <span>🚚 <b>Envío gratis</b> a toda Colombia</span>
-    <span>🛡️ <b>Garantía</b> de 1 mes en todos los productos</span>
-    <span>💳 <b>Pago contra entrega</b> en todo el país</span>
-    <span>⚡ Despacho en <b>24 horas</b></span>
+    <span><b>Envío gratis</b> a toda Colombia</span>
+    <span><b>Garantía</b> de 1 mes en todos los productos</span>
+    <span><b>Pago contra entrega</b> en todo el país</span>
+    <span>Despacho en <b>24 horas</b></span>
+    <span aria-hidden="true"><b>Envío gratis</b> a toda Colombia</span>
+    <span aria-hidden="true"><b>Garantía</b> de 1 mes en todos los productos</span>
+    <span aria-hidden="true"><b>Pago contra entrega</b> en todo el país</span>
+    <span aria-hidden="true">Despacho en <b>24 horas</b></span>
   </div>
 </div>
 
@@ -1194,9 +1391,9 @@
 <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Menú de navegación">
   <button class="close" type="button" aria-label="Cerrar menú" onclick="closeMenu()">✕</button>
   <div class="mobile-logo"><img src="logo/marca.png" alt="TecnoCoco"></div>
-  <a href="javascript:void(0)" onclick="closeMenu();openSearch()">🔎 Buscar productos</a>
-  <a href="javascript:void(0)" onclick="closeMenu();openFavorites()">❤ Mis favoritos</a>
-  <a href="javascript:void(0)" onclick="closeMenu();openCart()">🛒 Ver carrito</a>
+  <a href="javascript:void(0)" onclick="closeMenu();openSearch()">Buscar productos</a>
+  <a href="javascript:void(0)" onclick="closeMenu();openFavorites()">Mis favoritos</a>
+  <a href="javascript:void(0)" onclick="closeMenu();openCart()">Ver carrito</a>
   <a href="#categorias" onclick="closeMenu()">Categorías</a>
   <a href="#audifonos" onclick="closeMenu()">Audífonos</a>
   <a href="#cargadores" onclick="closeMenu()">Cargadores</a>
@@ -1262,7 +1459,7 @@
 
         <!-- Celda envío -->
         <div class="cell cell-ship">
-          <div class="ship-ico">🚚</div>
+          <div class="ship-ico"><svg class="i" aria-hidden="true"><use href="#ic-truck"/></svg></div>
           <div class="ship-txt"><b>Envío gratis</b><span>Toda Colombia · 24h</span></div>
         </div>
       </div>
@@ -1270,23 +1467,13 @@
   </div>
 </section>
 
-<!-- ============ TRUST STATS ============ -->
-<section class="trust">
-  <div class="container trust-grid">
-    <div class="trust-stat reveal"><div class="num" data-count="3000">0</div><div class="lbl">Clientes felices</div></div>
-    <div class="trust-stat reveal reveal-delay-1"><div class="num"><span data-count="49">0</span>★</div><div class="lbl">Calificación</div></div>
-    <div class="trust-stat reveal reveal-delay-2"><div class="num"><span data-count="24">0</span>h</div><div class="lbl">Despacho</div></div>
-    <div class="trust-stat reveal reveal-delay-3"><div class="num"><span data-count="100">0</span><small>%</small></div><div class="lbl">Garantía</div></div>
-  </div>
-</section>
-
 <!-- ============ FEATURE BAR ============ -->
-<section class="features">
+<section class="features" aria-label="Beneficios">
   <div class="container features-grid">
-    <div class="feature reveal"><div class="feature-icon">🚚</div><div><b>Envío nacional</b>Toda Colombia</div></div>
-    <div class="feature reveal reveal-delay-1"><div class="feature-icon">💳</div><div><b>Pago contra entrega</b>Nequi · Daviplata</div></div>
-    <div class="feature reveal reveal-delay-2"><div class="feature-icon">🛡️</div><div><b>Garantía</b>1 mes por defectos</div></div>
-    <div class="feature reveal reveal-delay-3"><div class="feature-icon">⚡</div><div><b>Despacho 24h</b>Pedidos antes de 4 pm</div></div>
+    <div class="feature reveal"><div class="feature-icon"><svg class="i" aria-hidden="true"><use href="#ic-truck"/></svg></div><div><b>Envío nacional</b>Toda Colombia</div></div>
+    <div class="feature reveal reveal-delay-1"><div class="feature-icon"><svg class="i" aria-hidden="true"><use href="#ic-cash"/></svg></div><div><b>Pago contra entrega</b>Nequi · Daviplata</div></div>
+    <div class="feature reveal reveal-delay-2"><div class="feature-icon"><svg class="i" aria-hidden="true"><use href="#ic-shield"/></svg></div><div><b>Garantía</b>1 mes por defectos</div></div>
+    <div class="feature reveal reveal-delay-3"><div class="feature-icon"><svg class="i" aria-hidden="true"><use href="#ic-bolt"/></svg></div><div><b>Despacho 24h</b>Pedidos antes de 4 pm</div></div>
   </div>
 </section>
 
@@ -1412,7 +1599,11 @@
         <p>Cargadores 20W, 30W y hasta 65W con tecnología PD para iPhone, Samsung, Xiaomi y más. Pide el tuyo hoy.</p>
         <a href="#cargadores" class="btn btn-primary">Ver cargadores →</a>
       </div>
-      <img src="img/banner.jpg" alt="Cargador rápido">
+      <div class="banner-shots">
+        <img src="img/p_cargador20w.jpg" alt="Adaptador Tipo C 20W">
+        <img src="img/p_powerbank.jpg" alt="Powerbank solar 10.000 mAh">
+        <img src="img/p_cable.jpg" alt="Cable Lightning 1 metro">
+      </div>
     </div>
   </div>
 </section>
@@ -1466,7 +1657,7 @@
 
       <article class="product reveal reveal-delay-2">
         <div class="product-img"><span class="shine"></span>
-          <span class="badge">☀️ Solar</span>
+          <span class="badge">Solar</span>
           <img src="img/p_powerbank.jpg" alt="Powerbank Solar 10.000 mAh">
         </div>
         <div class="product-body">
@@ -1626,30 +1817,23 @@
 <!-- ============ ABOUT ============ -->
 <section class="about" id="nosotros">
   <div class="container about-wrap">
-    <div class="about-head reveal">
-      <span class="about-eyebrow">Sobre nosotros</span>
-      <h2>Más que una tienda, somos tu <em>aliado tecnológico</em>.</h2>
-      <p class="lead">Desde 2024 conectamos a colombianos con los mejores accesorios y gadgets para celular. Calidad probada, precios justos y atención que se siente cercana.</p>
-    </div>
     <div class="about-main">
       <div class="about-logo-col reveal">
         <div class="logo-frame">
-          <div class="logo-ring"></div>
           <img src="logo/marca.png" alt="TecnoCoco">
         </div>
         <p class="logo-tagline">"Pequeños gadgets,<br><span class="gold">grandes experiencias</span>."</p>
-        <p class="logo-sig">— El equipo de TecnoCoco</p>
       </div>
       <div class="about-content reveal reveal-delay-1">
-        <h3>Tu tienda de tecnología <em>en Colombia</em>.</h3>
+        <h2>Más que una tienda, somos tu <em>aliado tecnológico</em>.</h2>
+        <p>Desde 2024 conectamos a colombianos con los mejores accesorios y gadgets para celular. Calidad probada, precios justos y atención que se siente cercana.</p>
         <p>En <b>TecnoCoco</b> seleccionamos cada producto que vendemos. No subimos catálogos infinitos: subimos lo que probamos, lo que dura y lo que recomendaríamos a nuestra propia familia.</p>
-        <p>Trabajamos con <b>envíos a todo el país</b>, ofrecemos <b>pago contra entrega en todo el país</b> y respondemos cada mensaje de WhatsApp en minutos — no días.</p>
-        <div class="pillars">
-          <div class="pillar"><div class="pillar-icon">✓</div><h4>Productos verificados</h4><p>Probamos cada modelo antes de venderlo. Si no nos convence, no entra al catálogo.</p></div>
-          <div class="pillar"><div class="pillar-icon">⚡</div><h4>Despacho 24 horas</h4><p>Pedidos antes de las 4 PM salen el mismo día con guía de seguimiento.</p></div>
-          <div class="pillar"><div class="pillar-icon">💬</div><h4>Atención humana</h4><p>Un asesor real por WhatsApp resuelve tus dudas, no un bot automático.</p></div>
-          <div class="pillar"><div class="pillar-icon">🛡️</div><h4>Garantía</h4><p>1 mes de garantía por defectos de fábrica, sin letras pequeñas ni vueltas.</p></div>
-        </div>
+        <ul class="pillars">
+          <li class="pillar"><div class="pillar-icon"><svg class="i" aria-hidden="true"><use href="#ic-verified"/></svg></div><h4>Productos verificados</h4><p>Probamos cada modelo antes de venderlo.</p></li>
+          <li class="pillar"><div class="pillar-icon"><svg class="i" aria-hidden="true"><use href="#ic-bolt"/></svg></div><h4>Despacho 24 horas</h4><p>Pedidos antes de las 4 PM salen el mismo día.</p></li>
+          <li class="pillar"><div class="pillar-icon"><svg class="i" aria-hidden="true"><use href="#ic-chat"/></svg></div><h4>Atención humana</h4><p>Un asesor real por WhatsApp, no un bot.</p></li>
+          <li class="pillar"><div class="pillar-icon"><svg class="i" aria-hidden="true"><use href="#ic-shield"/></svg></div><h4>Garantía</h4><p>1 mes por defectos de fábrica.</p></li>
+        </ul>
         <div class="about-cta">
           <a href="https://wa.me/573105490250?text=Hola%20TecnoCoco%2C%20quiero%20saber%20m%C3%A1s" target="_blank" class="btn"><svg width="18" height="18"><use href="#wa"/></svg> Conversemos</a>
           <div class="meta"><b>+3.000</b> pedidos enviados · <b>4.9★</b> calificación promedio</div>
@@ -1660,7 +1844,7 @@
 </section>
 
 <!-- ============ FAQ ============ -->
-<section class="faq">
+<section class="faq" id="faq">
   <div class="container">
     <div class="section-head reveal" style="justify-content:center;text-align:center;flex-direction:column;align-items:center">
       <div>
@@ -1705,8 +1889,8 @@
       Hablar por WhatsApp
     </a>
     <div class="contact-info reveal reveal-delay-3">
-      <span>📱 <b>+57 310 549 0250</b></span>
-      <span>📍 <b>Envíos a toda Colombia</b></span>
+      <span><svg class="i" aria-hidden="true"><use href="#ic-phone"/></svg><b>+57 310 549 0250</b></span>
+      <span><svg class="i" aria-hidden="true"><use href="#ic-pin"/></svg><b>Envíos a toda Colombia</b></span>
     </div>
   </div>
 </section>
@@ -1721,8 +1905,7 @@
         <div class="foot-brand"><span class="mark"><img src="logo/marca.png" alt="TecnoCoco" onerror="this.outerHTML='&lt;svg viewBox=\'0 0 64 64\'&gt;&lt;use href=\'#logo-tecnococo\'/&gt;&lt;/svg&gt;'"></span><span>TecnoCoco</span></div>
         <p>Tu tienda de tecnología y gadgets premium en Colombia. Accesorios · Gadgets · Tecnología · Más.</p>
         <div class="foot-socials">
-          <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.6 6.3a4.8 4.8 0 0 1-4-4.3h-3.4v13.2a2.7 2.7 0 1 1-2.7-2.7v-3.5a6.2 6.2 0 1 0 6.2 6.2V9.6a8.2 8.2 0 0 0 4.6 1.4V7.6c-.2 0-.5-.4-.7-1.3z"/></svg></a>
-          <a href="https://www.facebook.com/profile.php?id=61582608465970" target="_blank" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H9v3h2v7h3v-7h2.5l.5-3H14V9z"/></svg></a>
+          <a href="https://www.facebook.com/profile.php?id=61582608465970" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H9v3h2v7h3v-7h2.5l.5-3H14V9z"/></svg></a>
           <a href="https://wa.me/573105490250" aria-label="WhatsApp"><svg><use href="#wa"/></svg></a>
         </div>
       </div>
@@ -1736,9 +1919,9 @@
       <div class="foot-col">
         <h4>Soporte</h4>
         <a href="#contacto">Contacto</a>
-        <a href="#">Envíos</a>
-        <a href="#">Garantía</a>
-        <a href="#">Devoluciones</a>
+        <a href="#faq">Envíos</a>
+        <a href="#faq">Garantía</a>
+        <a href="#faq">Preguntas frecuentes</a>
       </div>
       <div class="foot-col">
         <h4>Contacto</h4>
@@ -1749,7 +1932,7 @@
     </div>
     <div class="foot-bottom">
       <div>© 2026 TecnoCoco · Todos los derechos reservados.</div>
-      <div><a href="#" style="margin-right:18px">Términos</a><a href="#">Privacidad</a></div>
+      <div>Pedidos por WhatsApp · Envíos a toda Colombia</div>
     </div>
   </div>
 </footer>
@@ -1806,9 +1989,9 @@
           </button>
         </div>
         <div class="pdetail-trust">
-          <div><div class="ico">🚚</div><b>Envío gratis</b>Toda Colombia</div>
-          <div><div class="ico">💳</div><b>Contra entrega</b>Todo el país</div>
-          <div><div class="ico">🛡️</div><b>Garantía</b>1 mes</div>
+          <div><div class="ico"><svg class="i" aria-hidden="true"><use href="#ic-truck"/></svg></div><b>Envío gratis</b>Toda Colombia</div>
+          <div><div class="ico"><svg class="i" aria-hidden="true"><use href="#ic-cash"/></svg></div><b>Contra entrega</b>Todo el país</div>
+          <div><div class="ico"><svg class="i" aria-hidden="true"><use href="#ic-shield"/></svg></div><b>Garantía</b>1 mes</div>
         </div>
       </div>
     </div>
@@ -1856,7 +2039,7 @@
     <button class="cart-checkout" type="button" onclick="checkoutWhatsApp()">
       <svg aria-hidden="true"><use href="#wa"/></svg> Finalizar pedido por WhatsApp
     </button>
-    <div class="cart-note">🔒 Coordinas pago y envío con un asesor real</div>
+    <div class="cart-note"><svg class="i" aria-hidden="true"><use href="#ic-lock"/></svg> Coordinas pago y envío con un asesor real</div>
   </div>
 </aside>
 
@@ -2188,7 +2371,7 @@
   }
   function renderSearch(heading){
     const box=$$('searchResults'); searchActiveIdx=-1;
-    if(!searchHits.length){ box.innerHTML='<div class="search-empty"><div class="big">🔍</div>No encontramos productos para tu búsqueda.<br>Prueba con “airpods”, “cargador” o “aro de luz”.</div>'; return; }
+    if(!searchHits.length){ box.innerHTML='<div class="search-empty"><div class="big"><svg class="i" aria-hidden="true"><use href="#ic-search"/></svg></div>No encontramos productos para tu búsqueda.<br>Prueba con “airpods”, “cargador” o “aro de luz”.</div>'; return; }
     box.innerHTML=(heading?'<div style="padding:6px 14px 2px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700">'+heading+'</div>':'')+
       searchHits.map((id,i)=>{ const p=PRODUCTS[id];
         return '<div class="s-item" role="option" tabindex="0" data-i="'+i+'" onclick="pickSearch(\''+id+'\')" onkeydown="if(event.key===\'Enter\')pickSearch(\''+id+'\')">'+
@@ -2212,7 +2395,7 @@
     openSearch();
     $$('searchChips').style.display='none';
     searchHits=[...favs].filter(id=>PRODUCTS[id]);
-    $$('searchResults').innerHTML='<div style="padding:6px 14px 2px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);font-weight:700">❤ Tus favoritos</div>'+
+    $$('searchResults').innerHTML='<div style="padding:6px 14px 2px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);font-weight:700">Tus favoritos</div>'+
       searchHits.map(id=>{ const p=PRODUCTS[id];
         return '<div class="s-item" role="option" tabindex="0" onclick="pickSearch(\''+id+'\')" onkeydown="if(event.key===\'Enter\')pickSearch(\''+id+'\')"><img class="s-thumb" src="'+p.img+'" alt="" loading="lazy"><div class="s-info"><div class="s-cat">'+p.cat+'</div><div class="s-name">'+p.name+'</div></div><div class="s-price">'+fmt(p.price)+'</div></div>';
       }).join('');
@@ -2238,14 +2421,17 @@
     fav.innerHTML='<svg><use href="#ic-heart"/></svg>';
     fav.addEventListener('click',e=>{ e.stopPropagation(); toggleFav(id); });
     actions.appendChild(fav); imgWrap.appendChild(actions);
-    // Agregar al carrito (junto al botón Comprar)
+    // Fila fina de acciones: Pedir por WhatsApp | Agregar al carrito
     const buy=card.querySelector('.buy');
     if(buy){
       const row=document.createElement('div'); row.className='buy-row';
       buy.parentNode.insertBefore(row,buy);
+      buy.innerHTML='<svg aria-hidden="true"><use href="#wa"/></svg><span>Pedir</span>';
+      buy.setAttribute('aria-label','Pedir '+PRODUCTS[id].name+' por WhatsApp');
+      buy.rel='noopener';
       const add=document.createElement('button'); add.type='button'; add.className='add-cart'; add.dataset.id=id;
       add.setAttribute('aria-label','Agregar '+PRODUCTS[id].name+' al carrito');
-      add.innerHTML='<svg><use href="#ic-cart"/></svg>';
+      add.innerHTML='<svg aria-hidden="true"><use href="#ic-cart"/></svg><span>Agregar</span>';
       add.addEventListener('click',e=>{ e.stopPropagation(); addToCart(id); });
       row.appendChild(buy); row.appendChild(add);
     }
@@ -2261,7 +2447,7 @@
   document.querySelectorAll('.cat-card img, .banner img').forEach(img=>{ img.loading='lazy'; img.decoding='async'; });
 
   /* ---------- Imágenes faltantes: placeholder de marca (degradación elegante) ---------- */
-  const IMG_PH='data:image/svg+xml,'+encodeURIComponent("<svg xmlns='http://www.w3.org/2000/svg' width='420' height='420'><rect width='420' height='420' fill='#15151a'/><rect x='10' y='10' width='400' height='400' rx='16' fill='none' stroke='#c9a24b' stroke-opacity='.3' stroke-width='2'/><path d='M150 205a60 60 0 0 1 120 0' fill='none' stroke='#c9a24b' stroke-width='9' stroke-linecap='round'/><rect x='136' y='200' width='22' height='42' rx='7' fill='#c9a24b'/><rect x='262' y='200' width='22' height='42' rx='7' fill='#c9a24b'/><circle cx='210' cy='216' r='30' fill='#c9a24b'/><text x='210' y='305' font-family='Inter,Arial,sans-serif' font-size='27' fill='#c9a24b' text-anchor='middle' font-weight='700'>TecnoCoco</text><text x='210' y='336' font-family='Inter,Arial,sans-serif' font-size='14' fill='#8a877e' text-anchor='middle'>Foto pr&#243;ximamente</text></svg>");
+  const IMG_PH='data:image/svg+xml,'+encodeURIComponent("<svg xmlns='http://www.w3.org/2000/svg' width='420' height='420'><rect width='420' height='420' fill='#f6f3ea'/><path d='M165 205a45 45 0 0 1 90 0' fill='none' stroke='#c9a24b' stroke-width='7' stroke-linecap='round'/><rect x='154' y='201' width='17' height='32' rx='5' fill='#c9a24b'/><rect x='249' y='201' width='17' height='32' rx='5' fill='#c9a24b'/><circle cx='210' cy='214' r='23' fill='#c9a24b'/><text x='210' y='286' font-family='Inter,Arial,sans-serif' font-size='20' fill='#b39047' text-anchor='middle' font-weight='700' letter-spacing='1'>TecnoCoco</text></svg>");
   function fixBrokenImg(img){
     if(!img||img.dataset.ph==='1'||(img.getAttribute('src')||'').startsWith('data:')||img.hasAttribute('onerror')) return;
     img.dataset.ph='1'; img.src=IMG_PH;
