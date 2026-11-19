@@ -8,7 +8,7 @@ Tienda online de **accesorios y gadgets de tecnología** en Colombia: audífonos
 
 ## ✨ Características
 
-- **Catálogo de 13 productos** con modal de detalle (especificaciones, valoraciones, productos relacionados).
+- **Catálogo de 12 productos** con modal de detalle (especificaciones, valoraciones, productos relacionados).
 - **Buscador en vivo** (ignora tildes, navegable con teclado).
 - **Carrito de compras** con cantidades y persistencia local, que arma el pedido completo y lo envía por **WhatsApp**.
 - **Favoritos** guardados en el navegador.
@@ -30,7 +30,7 @@ Un solo archivo `index.html` (HTML + CSS + JavaScript, sin dependencias ni build
 
 ## 🖼️ Imágenes
 
-Las fotos de producto van en `img/` con nombres fijos (`p_*.jpg`). Los productos nuevos vienen de Dropi con las fotos del proveedor, recortadas y optimizadas.
+Las fotos de producto van en `img/` con nombres fijos (`p_*.jpg`). Los productos nuevos vienen de proveedores verificados de Dropi, con sus fotos recortadas y optimizadas.
 
 ## ⚙️ Personalización
 
